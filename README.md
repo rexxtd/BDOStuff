@@ -1,5 +1,5 @@
 # Black Desert Online Tool
-This application provides some important information about Black Desert, help player to simulate some RNG stuff in the game so they can prepare themselves before the actual run.
+This application provides some important information about Black Desert, helps player to simulate some RNG stuff in the game so they can prepare themselves before the actual run.
 
 ## How to install
 > Coming soon
