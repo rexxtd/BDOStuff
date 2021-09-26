@@ -14,10 +14,10 @@ This application provides some important information about Black Desert, help pl
 > Coming soon
 
 ### Built With
-• Java
-• JavaFX
-• CSS
-• MySQL
+- Java
+- JavaFX
+- CSS
+- MySQL
 
 ### Pearl Abyss
 This project isn’t endorsed by Pearl Abyss and doesn’t reflect the views or opinions of PA or anyone officially involved in producing or managing Black Desert. Black Desert and Pearl Abyss are trademarks or registered trademarks of Pearl Abyss, Inc. Black Desert © Pearl Abyss, Inc.
