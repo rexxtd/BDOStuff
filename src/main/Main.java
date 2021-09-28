@@ -26,7 +26,7 @@ public class Main extends Application
             primaryStage.setY(event.getScreenY() - y);
         });
 
-        primaryStage.setScene(new Scene(root, 1400, 800));
+        primaryStage.setScene(new Scene(root, 1700, 900));
         primaryStage.show();
         primaryStage.setTitle("BDO Stuff");
     }

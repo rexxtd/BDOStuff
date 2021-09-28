@@ -33,10 +33,6 @@ public class MainUIController implements Initializable
     @FXML
     private Label impTime;
     @FXML
-    private Label Menu;
-    @FXML
-    private Label MenuClose;
-    @FXML
     private BorderPane mainPane;
 
     long night_hour,night_minute,night_second,daily_hour,daily_minute,daily_second,imp_hour,imp_minute,imp_second;
@@ -54,38 +50,6 @@ public class MainUIController implements Initializable
     {
         Exit.setOnMouseClicked(event -> {
             System.exit(0);
-        });
-        slider.setTranslateX(0);
-        Menu.setOnMouseClicked(event -> {
-            TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(slider);
-
-            slide.setToX(0);
-            slide.play();
-
-            slider.setTranslateX(-270);
-
-            slide.setOnFinished((ActionEvent e)-> {
-                Menu.setVisible(false);
-                MenuClose.setVisible(true);
-            });
-        });
-
-        MenuClose.setOnMouseClicked(event -> {
-            TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(slider);
-
-            slide.setToX(-270);
-            slide.play();
-
-            slider.setTranslateX(0);
-
-            slide.setOnFinished((ActionEvent e)-> {
-                Menu.setVisible(true);
-                MenuClose.setVisible(false);
-            });
         });
 
         //display default content for the first time

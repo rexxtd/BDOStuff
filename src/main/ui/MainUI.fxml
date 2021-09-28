@@ -12,13 +12,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1400.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.MainUIController">
+<AnchorPane prefHeight="900.0" prefWidth="1700.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.MainUIController">
    <children>
-      <BorderPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane fx:id="mainPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <AnchorPane fx:id="slider" minHeight="600.0" prefHeight="600.0" prefWidth="270.0" style="-fx-background-color: #242323;" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="slider" style="-fx-background-color: #242323;" BorderPane.alignment="CENTER">
                <children>
-                  <VBox layoutX="7.0" layoutY="70.0" prefHeight="630.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+                  <Label text="BDOstuff" textFill="#c3bdbd" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="AvQest" size="53.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="7.0" layoutY="87.0" prefHeight="758.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="87.0">
                      <children>
                         <JFXButton alignment="BASELINE_LEFT" onAction="#loadHome" prefHeight="62.0" prefWidth="270.0" styleClass="sidebarItem" text="Home" textFill="WHITE">
                            <font>
@@ -86,18 +91,18 @@
             </AnchorPane>
          </left>
          <top>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="1280.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane layoutX="102.0" layoutY="20.0" prefHeight="30.0" prefWidth="1280.0" style="-fx-background-color: #242323;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Pane layoutX="102.0" layoutY="20.0" prefHeight="30.0" style="-fx-background-color: #242323;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ImageView fx:id="Exit" fitHeight="27.0" fitWidth="27.0" layoutX="1372.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Exit" fitHeight="27.0" fitWidth="27.0" layoutX="1671.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/exit.png" />
                            </image>
                         </ImageView>
-                        <HBox prefHeight="30.0" prefWidth="1370.0" spacing="20.0">
+                        <HBox prefHeight="30.0" prefWidth="1700.0" spacing="210.0">
                            <children>
-                              <Label fx:id="nightTime" prefHeight="29.0" prefWidth="330.0" textFill="#2ae400">
+                              <Label fx:id="nightTime" prefHeight="29.0" prefWidth="240.0" textFill="#2ae400">
                                  <font>
                                     <Font name="Impact" size="23.0" />
                                  </font>
@@ -109,7 +114,7 @@
                                     </Label>
                                  </graphic>
                               </Label>
-                              <Label fx:id="dailyTime" prefHeight="29.0" prefWidth="330.0" textFill="#2ae400">
+                              <Label fx:id="dailyTime" prefHeight="29.0" prefWidth="240.0" textFill="#2ae400">
                                  <font>
                                     <Font name="Impact" size="23.0" />
                                  </font>
@@ -121,7 +126,7 @@
                                     </Label>
                                  </graphic>
                               </Label>
-                              <Label fx:id="impTime" prefHeight="29.0" prefWidth="330.0" textFill="#2ae400">
+                              <Label fx:id="impTime" prefHeight="29.0" prefWidth="270.0" textFill="#2ae400">
                                  <font>
                                     <Font name="Impact" size="23.0" />
                                  </font>
@@ -135,87 +140,11 @@
                               </Label>
                            </children>
                            <padding>
-                              <Insets left="250.0" />
+                              <Insets left="400.0" />
                            </padding>
                         </HBox>
                      </children>
                   </Pane>
-                  <HBox prefHeight="50.0" prefWidth="1010.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
-                     <children>
-                        <JFXButton onAction="#loadHome" prefHeight="48.0" prefWidth="252.0" styleClass="menuItem" text="Home">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/dash1.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font name="NSimSun" size="26.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton onAction="#loadDateTime" prefHeight="48.0" prefWidth="252.0" styleClass="menuItem" text="Date/Time">
-                           <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/clock.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font name="NSimSun" size="26.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton prefHeight="48.0" prefWidth="252.0" styleClass="menuItem" text="Simulator">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/monitor.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font name="NSimSun" size="26.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton prefHeight="48.0" prefWidth="252.0" styleClass="menuItem" text="Donate">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/add1.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font name="NSimSun" size="26.0" />
-                           </font>
-                        </JFXButton>
-                     </children>
-                  </HBox>
-                  <Label fx:id="Menu" layoutX="14.0" layoutY="40.0" text="BDOStuff" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="NSimSun" size="26.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="MenuClose" layoutX="14.0" layoutY="40.0" text="BDOStuff" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/menu1.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="NSimSun" size="26.0" />
-                     </font>
-                  </Label>
                </children>
             </AnchorPane>
          </top>
@@ -223,12 +152,15 @@
             <AnchorPane style="-fx-background-color: #F4F4F4;" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
-            <AnchorPane prefHeight="23.0" prefWidth="1400.0" style="-fx-background-color: #242323;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="25.0" prefWidth="1400.0" style="-fx-background-color: #242323;" BorderPane.alignment="CENTER">
                <children>
-                  <Label layoutX="683.0" layoutY="1.0" text="© 2021 BDOStuff" textFill="WHITE" AnchorPane.leftAnchor="625.0" AnchorPane.rightAnchor="625.0">
+                  <Label layoutX="683.0" layoutY="1.0" prefHeight="24.0" prefWidth="405.0" text="© 2021 BDOStuff" textFill="WHITE" AnchorPane.leftAnchor="775.0" AnchorPane.rightAnchor="520.0">
                      <font>
                         <Font name="Cambria Math" size="20.0" />
                      </font>
+                     <padding>
+                        <Insets left="135.0" />
+                     </padding>
                   </Label>
                </children>
             </AnchorPane>
