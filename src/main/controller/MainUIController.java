@@ -106,13 +106,15 @@ public class MainUIController implements Initializable
         night_minute = (night_temp % 3600) / 60;
         night_second = night_temp - night_hour * 3600 - night_minute * 60;
 
-        daily_hour = mainUIModule.getDailyTime() / 3600;
-        daily_minute = (mainUIModule.getDailyTime() % 3600) / 60;
-        daily_second = mainUIModule.getDailyTime() - daily_hour * 3600 - daily_minute * 60;
+        long daily_temp = mainUIModule.getDailyTime();
+        daily_hour = daily_temp / 3600;
+        daily_minute = (daily_temp % 3600) / 60;
+        daily_second = daily_temp - daily_hour * 3600 - daily_minute * 60;
 
-        imp_hour = mainUIModule.getImperialTime() / 3600;
-        imp_minute = (mainUIModule.getImperialTime() % 3600) / 60;
-        imp_second = mainUIModule.getImperialTime() - imp_hour * 3600 - imp_minute * 60;
+        long imp_temp = mainUIModule.getImperialTime();
+        imp_hour = imp_temp / 3600;
+        imp_minute = (imp_temp % 3600) / 60;
+        imp_second = imp_temp - imp_hour * 3600 - imp_minute * 60;
     }
 
     public void oneSecondPass()
