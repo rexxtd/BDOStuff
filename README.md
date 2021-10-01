@@ -11,13 +11,16 @@ This application provides some important information about Black Desert, helps p
 > Coming soon
 
 ### Preview 
-> Coming soon
+![mainmenu](https://user-images.githubusercontent.com/73376155/135648494-1156d581-a44d-40c5-a91b-8723788df50a.png)
+
+> More coming soon
 
 ### Built With
 - Java
 - JavaFX
 - CSS
 - MySQL
+
 
 ### Pearl Abyss
 This project isn’t endorsed by Pearl Abyss and doesn’t reflect the views or opinions of PA or anyone officially involved in producing or managing Black Desert. Black Desert and Pearl Abyss are trademarks or registered trademarks of Pearl Abyss, Inc. Black Desert © Pearl Abyss, Inc.
