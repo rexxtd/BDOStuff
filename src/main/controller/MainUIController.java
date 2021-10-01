@@ -2,7 +2,6 @@ package main.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,10 +47,6 @@ public class MainUIController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        Exit.setOnMouseClicked(event -> {
-            System.exit(0);
-        });
-
         //display default content for the first time
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("Home");
@@ -171,7 +166,7 @@ public class MainUIController implements Initializable
     private void loadDateTime(ActionEvent event) throws IOException
     {
         FxmlLoader object = new FxmlLoader();
-        Pane view = object.getPage("DateTime");
+        Pane view = object.getPage("BossTimer");
         mainPane.setCenter(view);
     }
 }

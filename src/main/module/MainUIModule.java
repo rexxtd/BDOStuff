@@ -10,20 +10,29 @@ public class MainUIModule
 
     public long getNightTime()
     {
-        int i = 1;
+        LocalTime localTime = LocalTime.now();
         boolean check = false;
         long time = 0;
-        while(!check && i<= nightTime.length)
+        while(!check)
         {
-            LocalTime localTime = LocalTime.now();
-            LocalTime timeFixed = LocalTime.parse(nightTime[i]);
-            if (timeFixed.compareTo(localTime) > 0)
+            for (int i=0; i < nightTime.length; i++)
             {
-                time = localTime.until(timeFixed, ChronoUnit.SECONDS);
-                check = true;
+                LocalTime timeFixed = LocalTime.parse(nightTime[i]);
+                if (timeFixed.compareTo(localTime) > 0)
+                {
+                    time = localTime.until(timeFixed, ChronoUnit.SECONDS);
+                    check = true;
+                    break;
+                }
+                else
+                {
+                    if (i == 5)
+                    {
+                        time = 86400 - LocalTime.parse(nightTime[0]).until(localTime, ChronoUnit.SECONDS);
+                        check = true;
+                    }
+                }
             }
-            else
-                i++;
         }
         return time;
     }
@@ -45,19 +54,28 @@ public class MainUIModule
     public long getImperialTime()
     {
         LocalTime localTime = LocalTime.now();
-        int i = 1;
         boolean check = false;
         long time = 0;
-        while(!check && i<= imperialTime.length)
+        while(!check)
         {
-            LocalTime timeFixed = LocalTime.parse(imperialTime[i]);
-            if (timeFixed.compareTo(localTime) > 0)
+            for (int i=0; i < imperialTime.length; i++)
             {
-                time = localTime.until(timeFixed, ChronoUnit.SECONDS);
-                check = true;
+                LocalTime timeFixed = LocalTime.parse(imperialTime[i]);
+                if (timeFixed.compareTo(localTime) > 0)
+                {
+                    time = localTime.until(timeFixed, ChronoUnit.SECONDS);
+                    check = true;
+                    break;
+                }
+                else
+                {
+                    if (i == 5)
+                    {
+                        time = 86400 - LocalTime.parse(imperialTime[0]).until(localTime, ChronoUnit.SECONDS);
+                        check = true;
+                    }
+                }
             }
-            else
-                i++;
         }
         return time;
     }

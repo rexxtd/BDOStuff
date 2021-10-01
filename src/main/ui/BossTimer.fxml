@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.BossTimerController">
+   <children>
+      <Label layoutX="514.0" layoutY="9.0" text="World Boss Timer" textFill="WHITE" AnchorPane.leftAnchor="514.0" AnchorPane.rightAnchor="513.0" AnchorPane.topAnchor="9.0">
+         <font>
+            <Font name="AvQest" size="47.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="106.0" text="Next boss" textFill="#e8e8e8">
+         <font>
+            <Font name="Cambria Bold" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="925.0" layoutY="105.0" text="Followed by" textFill="#e8e8e8">
+         <font>
+            <Font name="Cambria Bold" size="33.0" />
+         </font>
+      </Label>
+      <HBox layoutX="279.0" layoutY="153.0" prefHeight="58.0" prefWidth="896.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="nextBoss1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/worldboss/kzarka.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="nextBoss2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/worldboss/kzarka.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="followBoss1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/worldboss/kzarka.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="260.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fx:id="followBoss2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/worldboss/kzarka.png" />
+               </image>
+            </ImageView>
+         </children></HBox>
+      <HBox layoutX="277.0" layoutY="311.0" prefHeight="42.0" prefWidth="896.0" spacing="10.0">
+         <children>
+            <Label fx:id="nextBossName1" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="nextBossName2" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+            </Label>
+            <Label fx:id="followBossName1" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="260.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="followBossName2" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
+               <font>
+                  <Font name="Cambria" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox layoutX="277.0" layoutY="350.0" prefHeight="42.0" prefWidth="896.0" spacing="10.0">
+         <children>
+            <Label fx:id="nextBossTime" alignment="CENTER" prefHeight="34.0" prefWidth="317.0" textFill="#2ae400">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="followBossTime" alignment="CENTER" prefHeight="34.0" prefWidth="317.0" textFill="#2ae400">
+               <font>
+                  <Font name="Impact" size="23.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="260.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="394.0" prefHeight="50.0" prefWidth="1177.0" styleClass="bossTableTop" AnchorPane.leftAnchor="131.0" AnchorPane.rightAnchor="132.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="UTC +7" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Monday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Tuesday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Wednesday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Thursday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Friday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Saturday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Sunday" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft YaHei Light" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="447.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableMiddle">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="00:30" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="135.0" text="Kutum" textFill="#d16fff">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text=" Nouver" textFill="#ff8989">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="148.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="147.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Offin" textFill="#78ff8a">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="128.0" text="      Kutum" textFill="#d16fff">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="         Nouver" textFill="#ff8989">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="       Karanda" textFill="#80aeff">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="      Kzarka" textFill="#c90000">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="509.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableMiddle">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="10:00" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="166.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="143.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="151.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="572.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableMiddle">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="14:00" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="151.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="166.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="141.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="155.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="126.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="165.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="128.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="635.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableMiddle">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="15:00" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="136.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text=" -" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="-" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="139.0" text=" Garmoth" textFill="#ff4aae">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text=" Vell" textFill="#00fdff">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="698.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableMiddle">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="19:00" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="140.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="151.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Quint" textFill="#c2c2c2">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Muraka" textFill="#c2c2c2">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="144.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="159.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="135.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text="Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="144.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Quint" textFill="#c2c2c2">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Muraka" textFill="#c2c2c2">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="155.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Kzarka" textFill="#c90000">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Karanda" textFill="#80aeff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="132.0" layoutY="761.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableBottom" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="131.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="23:00" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="142.0" text="Offin" textFill="#78ff8a">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="134.0" text="   Garmoth" textFill="#ff4aae">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefWidth="150.0" text="   Vell" textFill="#00fdff">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="162.0" text="   Garmoth" textFill="#ff4aae">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="127.0" text="    Offin" textFill="#78ff8a">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="144.0" text="      -" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Regular" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" prefHeight="60.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Kutum" textFill="#d16fff">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" prefWidth="150.0" text=" Nouver" textFill="#ff8989">
+                     <font>
+                        <Font name="SansSerif Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

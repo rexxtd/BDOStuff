@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1430.0" style="-fx-background-color: #F4F4F4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.HomeScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.HomeScreenController">
    <children>
       <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Welcome">
+            <Label text="Welcome" textFill="WHITE">
                <font>
                   <Font name="NSimSun" size="37.0" />
                </font>
@@ -21,7 +21,7 @@
                   <Insets top="140.0" />
                </VBox.margin>
             </Label>
-            <Label text="BDO STUFF" textFill="#942828">
+            <Label text="BDO STUFF" textFill="#eb4040">
                <font>
                   <Font name="AvQest" size="56.0" />
                </font>
@@ -29,7 +29,7 @@
                   <Insets top="50.0" />
                </VBox.margin>
             </Label>
-            <Label text="is an application provides some important information about Black Desert," textFill="#646464">
+            <Label text="is an application provides some important information about Black Desert," textFill="#dddddd">
                <font>
                   <Font name="NSimSun" size="26.0" />
                </font>
@@ -37,17 +37,17 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Label>
-            <Label text="It also helps player to simulate some RNG stuff in the game," textFill="#646464">
+            <Label text="It also helps player to simulate some RNG stuff in the game," textFill="#dddddd">
                <font>
                   <Font name="NSimSun" size="26.0" />
                </font>
             </Label>
-            <Label text="so they can prepare themselves before the actual run." textFill="#646464">
+            <Label text="so they can prepare themselves before the actual run." textFill="#dddddd">
                <font>
                   <Font name="NSimSun" size="26.0" />
                </font>
             </Label>
-            <Label text="Want to have some fun? Let's begin and also">
+            <Label text="Want to have some fun? Let's begin and also" textFill="#dddddd">
                <font>
                   <Font name="NSimSun" size="26.0" />
                </font>
@@ -65,6 +65,6 @@
             </ImageView>
          </children>
       </VBox>
-      <Hyperlink layoutX="390.0" layoutY="490.0" onAction="#DiscordLink" opacity="0.0" prefHeight="114.0" prefWidth="356.0" text="Hyperlink" />
+      <Hyperlink layoutX="565.0" layoutY="565.0" onAction="#DiscordLink" opacity="0.0" prefHeight="114.0" prefWidth="356.0" text="Hyperlink" />
    </children>
 </AnchorPane>
