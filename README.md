@@ -5,10 +5,9 @@ This application provides some important information about Black Desert, helps p
 > Coming soon
 
 ## Project Overview
-> Coming soon
 
 ### Purpose
-> Coming soon
+I developed this application as a fun project, and to learn more about Java and HTLM/CSS knowledge.
 
 ### Preview 
 ![home](https://user-images.githubusercontent.com/73376155/135753518-8775021a-9d91-40cb-890f-273b19661810.png)
