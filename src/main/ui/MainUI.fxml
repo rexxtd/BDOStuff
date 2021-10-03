@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -16,7 +17,7 @@
    <children>
       <BorderPane fx:id="mainPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <AnchorPane fx:id="slider" prefHeight="805.0" prefWidth="260.0" style="-fx-background-color: #2b2b2b;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="805.0" prefWidth="260.0" style="-fx-background-color: #2b2b2b;" BorderPane.alignment="CENTER">
                <children>
                   <Label text="BDOstuff" textFill="WHITE" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="20.0">
                      <font>
@@ -32,7 +33,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/dash.png" />
+                                    <Image url="@../img/icon/dash.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -44,7 +45,7 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/data.png" />
+                                    <Image url="@../img/icon/clock.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -56,31 +57,31 @@
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/report.png" />
+                                    <Image url="@../img/icon/joystick.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" prefWidth="270.0" styleClass="sidebarItem" text="Donate" textFill="#d0d0d0">
+                        <JFXButton alignment="BASELINE_LEFT" prefWidth="270.0" styleClass="sidebarItem" text="Setting" textFill="#d0d0d0">
                            <font>
                               <Font name="AvQest" size="30.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/add.png" />
+                                    <Image url="@../img/icon/settings.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" prefWidth="270.0" styleClass="sidebarItem" text="Info" textFill="#d0d0d0">
+                        <JFXButton alignment="BASELINE_LEFT" onAction="#loadDonate" prefWidth="260.0" styleClass="sidebarItem" text="Buy Me A Coffe" textFill="#d0d0d0" wrapText="true">
                            <font>
                               <Font name="AvQest" size="30.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/data.png" />
+                                    <Image url="@../img/icon/coffee.png" />
                                  </image>
                               </ImageView>
                            </graphic>
@@ -95,12 +96,9 @@
                <children>
                   <Pane layoutX="102.0" layoutY="20.0" prefHeight="30.0" style="-fx-background-color: #2b2b2b;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ImageView fx:id="Exit" fitHeight="27.0" fitWidth="27.0" layoutX="1671.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/exit.png" />
-                           </image>
-                        </ImageView>
-                        <HBox prefHeight="30.0" prefWidth="1700.0" spacing="210.0">
+                        <FontAwesomeIconView fill="#ff7070" glyphName="CLOSE" layoutX="1656.0" layoutY="24.0" onMouseClicked="#Exit" size="25" styleClass="FontAwesomeIcon" textAlignment="CENTER" wrappingWidth="42.0" />
+                        <FontAwesomeIconView fill="#ff7070" glyphName="MINUS" layoutX="1603.0" layoutY="25.0" onMouseClicked="#Minimize" size="23" styleClass="FontAwesomeIcon" textAlignment="CENTER" wrappingWidth="42.0" />
+                        <HBox prefHeight="30.0" prefWidth="1571.0" spacing="200.0">
                            <children>
                               <Label fx:id="nightTime" prefHeight="29.0" prefWidth="240.0" textFill="#2ae400">
                                  <font>
@@ -140,7 +138,7 @@
                               </Label>
                            </children>
                            <padding>
-                              <Insets left="400.0" />
+                              <Insets left="380.0" />
                            </padding>
                         </HBox>
                      </children>
@@ -154,7 +152,7 @@
          <bottom>
             <AnchorPane maxHeight="25.0" maxWidth="1700.0" prefHeight="25.0" prefWidth="1700.0" style="-fx-background-color: #252530;" BorderPane.alignment="CENTER_RIGHT">
                <children>
-                  <Label layoutX="775.0" layoutY="1.0" prefHeight="25.0" prefWidth="367.0" text="© 2021 BDOStuff" textFill="#d0d0d0" AnchorPane.leftAnchor="775.0" AnchorPane.rightAnchor="558.0" AnchorPane.topAnchor="0.0">
+                  <Label layoutX="618.0" layoutY="1.0" prefHeight="25.0" prefWidth="614.0" text="© 2021 BDOStuff. All right reserved." textFill="#d0d0d0" AnchorPane.leftAnchor="618.0" AnchorPane.rightAnchor="468.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="Cambria Math" size="20.0" />
                      </font>

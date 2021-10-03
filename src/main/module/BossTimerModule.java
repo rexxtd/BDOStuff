@@ -8,6 +8,7 @@ import java.util.Date;
 public class BossTimerModule
 {
     int time_row,day_column;
+    public long followTime;
     String[] timer = {"00:30:00","10:00:00","14:00:00","15:00:00","19:00:00","23:00:00"};
     String[][] bossData = new String[6][7];
 
@@ -29,7 +30,40 @@ public class BossTimerModule
         return bossData[time_row][day_column];
     }
 
-    public void getNextBossDate()
+    public String getFollowBoss()
+    {
+        int follow_row = 0,follow_column = 0;
+        if (time_row == 5)
+        {
+            if (day_column == 6)
+            {
+                follow_column = 0;
+                follow_row = 0;
+            }
+            else
+            {
+                follow_column = day_column + 1;
+                follow_row = 0;
+            }
+        }
+        else
+        {
+            follow_row = time_row + 1;
+            follow_column = day_column;
+            if (bossData[follow_row][follow_column] == "-")
+                if (follow_row == 5)
+                {
+                    follow_row = 0;
+                    follow_column ++;
+                }
+                else
+                    follow_row++;
+        }
+
+        return bossData[follow_row][follow_column];
+    }
+
+    public void getBossDate()
     {
         SimpleDateFormat sdf = new SimpleDateFormat("EEE");
         Date d = new Date();
@@ -64,7 +98,7 @@ public class BossTimerModule
 
     public long getNextBossTime()
     {
-        getNextBossDate();
+        getBossDate();
         LocalTime localTime = LocalTime.now();
         boolean check = false;
         long time = 0;
@@ -82,6 +116,9 @@ public class BossTimerModule
                         day_column++;
                         time = 86400 - LocalTime.parse(timer[0]).until(localTime, ChronoUnit.SECONDS);
                         time_row = 0;
+
+                        followTime = 86400 - LocalTime.parse(timer[1]).until(localTime, ChronoUnit.SECONDS);
+
                         break;
                     }
                     else
@@ -91,6 +128,9 @@ public class BossTimerModule
                             day_column++;
                             time = 86400 - LocalTime.parse(timer[0]).until(localTime, ChronoUnit.SECONDS);
                             time_row = 0;
+
+                            followTime = 86400 - LocalTime.parse(timer[1]).until(localTime, ChronoUnit.SECONDS);
+
                             break;
                         }
                     }
@@ -103,6 +143,9 @@ public class BossTimerModule
                         day_column = 0;
                         time = 86400 - LocalTime.parse(timer[0]).until(localTime, ChronoUnit.SECONDS);
                         time_row = 0;
+
+                        followTime = 86400 - LocalTime.parse(timer[1]).until(localTime, ChronoUnit.SECONDS);
+
                         break;
                     }
                 }
@@ -115,8 +158,29 @@ public class BossTimerModule
                         if(bossData[i][day_column] != "-")
                         {
                             time = localTime.until(timeFixed, ChronoUnit.SECONDS);
-                            check = true;
                             time_row = i;
+
+                            LocalTime followTimeFixed;
+                            if (time_row == 5)
+                            {
+                                followTimeFixed = LocalTime.parse(timer[0]);
+                                followTime = 86400 - followTimeFixed.until(localTime, ChronoUnit.SECONDS);
+                            }
+                            else
+                            {
+                                if (bossData[i+1][day_column] != "-")
+                                {
+                                    followTimeFixed = LocalTime.parse(timer[i + 1]);
+                                    followTime = localTime.until(followTimeFixed, ChronoUnit.SECONDS);
+                                }
+                                else
+                                {
+                                    followTimeFixed = LocalTime.parse(timer[(i + 1) + 1]);
+                                    followTime = localTime.until(followTimeFixed, ChronoUnit.SECONDS);
+                                }
+                            }
+
+                            check = true;
                             break;
                         }
                     }
@@ -126,6 +190,9 @@ public class BossTimerModule
                         {
                             time = 86400 - LocalTime.parse(timer[0]).until(localTime, ChronoUnit.SECONDS);
                             day_column++;
+
+                            followTime = 86400 - LocalTime.parse(timer[1]).until(localTime, ChronoUnit.SECONDS);
+
                             check = true;
                             break;
                         }

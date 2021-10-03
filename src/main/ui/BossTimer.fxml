@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -26,62 +25,33 @@
             <Font name="Cambria Bold" size="33.0" />
          </font>
       </Label>
-      <HBox layoutX="279.0" layoutY="153.0" prefHeight="58.0" prefWidth="896.0" spacing="10.0">
-         <children>
-            <ImageView fx:id="nextBoss1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/worldboss/kzarka.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="nextBoss2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/worldboss/kzarka.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="followBoss1" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/worldboss/kzarka.png" />
-               </image>
-               <HBox.margin>
-                  <Insets left="260.0" />
-               </HBox.margin>
-            </ImageView>
-            <ImageView fx:id="followBoss2" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/worldboss/kzarka.png" />
-               </image>
-            </ImageView>
-         </children></HBox>
-      <HBox layoutX="277.0" layoutY="311.0" prefHeight="42.0" prefWidth="896.0" spacing="10.0">
-         <children>
-            <Label fx:id="nextBossName1" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
-               <font>
-                  <Font name="Cambria" size="25.0" />
-               </font>
-            </Label>
-            <Label fx:id="nextBossName2" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
-               <font>
-                  <Font name="Cambria" size="25.0" />
-               </font>
-            </Label>
-            <Label fx:id="followBossName1" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
-               <font>
-                  <Font name="Cambria" size="25.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="260.0" />
-               </HBox.margin>
-            </Label>
-            <Label fx:id="followBossName2" alignment="CENTER" prefHeight="34.0" prefWidth="150.0" text="Kzarka" textFill="WHITE">
-               <font>
-                  <Font name="Cambria" size="25.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
+      <ImageView fx:id="nextBoss1" fitHeight="150.0" fitWidth="150.0" layoutX="277.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="nextBoss2" fitHeight="150.0" fitWidth="150.0" layoutX="439.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="followBoss1" fitHeight="150.0" fitWidth="150.0" layoutX="852.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="followBoss2" fitHeight="150.0" fitWidth="150.0" layoutX="1017.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="nextBossName1" alignment="CENTER" layoutX="277.0" layoutY="315.0" prefHeight="34.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="nextBossName2" alignment="CENTER" layoutX="439.0" layoutY="315.0" prefHeight="34.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="followBossName1" alignment="CENTER" layoutX="852.0" layoutY="315.0" prefHeight="34.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="followBossName2" alignment="CENTER" layoutX="1017.0" layoutY="315.0" prefHeight="34.0" prefWidth="150.0" textFill="WHITE">
+         <font>
+            <Font name="Cambria" size="25.0" />
+         </font>
+      </Label>
       <HBox layoutX="277.0" layoutY="350.0" prefHeight="42.0" prefWidth="896.0" spacing="10.0">
          <children>
-            <Label fx:id="nextBossTime" alignment="CENTER" prefHeight="34.0" prefWidth="317.0" textFill="#2ae400">
+            <Label fx:id="nextBossTime" alignment="CENTER" prefHeight="34.0" prefWidth="317.0" text=" " textFill="#2ae400">
                <font>
                   <Font name="Impact" size="23.0" />
                </font>
@@ -597,12 +567,12 @@
             </Label>
             <VBox alignment="CENTER" prefHeight="60.0" prefWidth="160.0">
                <children>
-                  <Label alignment="CENTER" prefWidth="150.0" text=" Kutum" textFill="#d16fff">
+                  <Label alignment="CENTER" prefWidth="150.0" text="      Kutum" textFill="#d16fff">
                      <font>
                         <Font name="SansSerif Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" prefWidth="150.0" text=" Nouver" textFill="#ff8989">
+                  <Label alignment="CENTER" prefWidth="150.0" text="      Nouver" textFill="#ff8989">
                      <font>
                         <Font name="SansSerif Bold" size="20.0" />
                      </font>

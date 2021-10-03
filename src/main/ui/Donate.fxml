@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.DonateController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" layoutY="30.0" prefHeight="800.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vmax="1.5">
+        <content>
+          <AnchorPane prefHeight="1600.0" prefWidth="1421.0" style="-fx-background-color: #252530;">
+               <children>
+                  <VBox layoutX="97.0" layoutY="70.0" prefHeight="1392.0" prefWidth="1264.0" spacing="10.0">
+                     <children>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Greeting,">
+                           <font>
+                              <Font name="Ink Free" size="67.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="965.0">
+                           <children>
+                              <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="My name is">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#f8f8f8" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuan Dat">
+                                 <font>
+                                    <Font name="Calibri Bold" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="0.5" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=".">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="I am currently a 3rd year university student. I usually create and participate in some open source projects in my free time.">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="1264.0">
+                           <children>
+                              <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="You can check out my projects on my">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#12d0f2" layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHub" wrappingWidth="65.990234375">
+                                 <font>
+                                    <Font name="Calibri" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text=".">
+                                 <font>
+                                    <Font name="SansSerif Regular" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets bottom="3.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="50.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy me a coffee" wrappingWidth="458.1090087890625">
+                           <font>
+                              <Font name="Ink Free" size="67.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Coding is time consuming and always took several late nights, especially since I work after my regular day job and study.">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#eeeeee" layoutX="10.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="If you like my work or simply just want to show your kindess, you can consider support me through serveral ways:">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Momo" wrappingWidth="117.1090087890625">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="35.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Text>
+                        <ImageView fitHeight="527.0" fitWidth="417.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/data/1.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets left="390.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER" maxWidth="1224.0" prefHeight="21.0" prefWidth="1224.0">
+                           <children>
+                              <Text fill="#b5b2b2" strokeType="OUTSIDE" strokeWidth="0.0" text="Scan QR Code with ">
+                                 <font>
+                                    <Font name="Calibri Italic" size="21.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#12d0f2" strokeType="OUTSIDE" strokeWidth="0.0" text="Momo">
+                                 <font>
+                                    <Font name="Calibri Italic" size="21.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#b5b2b2" strokeType="OUTSIDE" strokeWidth="0.0" text=" on your phone.">
+                                 <font>
+                                    <Font name="Calibri Italic" size="21.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank Transfer" wrappingWidth="234.1090087890625">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="35.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="70.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="• SHB - Saigon Hanoi Commercial Joint Stock Bank: 1018563509 (NGUYEN TUAN DAT)">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" top="25.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="• CommBank - Commonwealth Bank (Australia): 063-262 1095 7433 (DAT NGUYEN)">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="50.0" top="20.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#eeeeee" strokeType="OUTSIDE" strokeWidth="0.0" text="Paypal" wrappingWidth="117.1090087890625">
+                           <font>
+                              <Font name="Nirmala UI Bold" size="35.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="45.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text fill="#12d0f2" strokeType="OUTSIDE" strokeWidth="0.0" text="https://www.paypal.com/paypalme/dat1812">
+                           <font>
+                              <Font name="Calibri" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <Hyperlink layoutX="447.0" layoutY="281.0" onAction="#GitHubLink" prefHeight="29.0" prefWidth="75.0" />
+                  <Hyperlink layoutX="93.0" layoutY="1542.0" onAction="#PaypalLink" prefHeight="38.0" prefWidth="428.0" />
+                  <Hyperlink layoutX="694.0" layoutY="1148.0" onAction="#MomoLink" prefHeight="31.0" prefWidth="61.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

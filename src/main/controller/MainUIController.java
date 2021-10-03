@@ -1,17 +1,20 @@
 package main.controller;
 
+import com.dustinredmond.fxtrayicon.FXTrayIcon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.FxmlLoader;
+import main.Main;
 import main.module.MainUIModule;
 
 import java.io.IOException;
@@ -21,10 +24,6 @@ import java.util.ResourceBundle;
 public class MainUIController implements Initializable
 {
     public MainUIModule mainUIModule = new MainUIModule();
-    @FXML
-    private AnchorPane slider;
-    @FXML
-    private ImageView Exit;
     @FXML
     private Label nightTime;
     @FXML
@@ -168,5 +167,28 @@ public class MainUIController implements Initializable
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("BossTimer");
         mainPane.setCenter(view);
+    }
+
+    @FXML
+    private void loadDonate(ActionEvent event) throws IOException
+    {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Donate");
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    void Exit(MouseEvent event)
+    {
+        System.exit(0);
+        /*Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();*/
+    }
+
+    @FXML
+    void Minimize(MouseEvent event)
+    {
+        Stage stage= (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setIconified(true);
     }
 }
