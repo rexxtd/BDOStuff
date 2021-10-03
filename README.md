@@ -1,4 +1,4 @@
-# Black Desert Online Tool
+# Black Desert Online Stuff
 This application provides some important information about Black Desert, helps player to simulate some RNG stuff in the game so they can prepare themselves before the actual run.
 
 ## How to install
@@ -11,7 +11,10 @@ This application provides some important information about Black Desert, helps p
 > Coming soon
 
 ### Preview 
-![mainmenu](https://user-images.githubusercontent.com/73376155/135648494-1156d581-a44d-40c5-a91b-8723788df50a.png)
+![home](https://user-images.githubusercontent.com/73376155/135753518-8775021a-9d91-40cb-890f-273b19661810.png)
+
+
+![coffee](https://user-images.githubusercontent.com/73376155/135753586-5abd3000-ad65-41e2-8813-98b11885ad6e.png)
 
 > More coming soon
 
