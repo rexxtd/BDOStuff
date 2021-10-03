@@ -12,15 +12,6 @@ I developed this application as a fun project, and to learn more about Java and 
 ### Preview 
 ![home](https://user-images.githubusercontent.com/73376155/135753518-8775021a-9d91-40cb-890f-273b19661810.png)
 
-
-![coffee](https://user-images.githubusercontent.com/73376155/135753586-5abd3000-ad65-41e2-8813-98b11885ad6e.png)
-
-
-![worldboss](https://user-images.githubusercontent.com/73376155/135753659-a6b34a8f-848c-4169-9958-bc9ab5621d00.png)
-
-
-> More coming soon
-
 ### Built With
 - Java
 - JavaFX
