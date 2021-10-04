@@ -1,5 +1,8 @@
 package main.module;
 
+import javafx.animation.TranslateTransition;
+import javafx.util.Duration;
+
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 

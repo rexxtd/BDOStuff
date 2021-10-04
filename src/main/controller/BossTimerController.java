@@ -2,8 +2,10 @@ package main.controller;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 /*import javafx.scene.media.Media;
@@ -44,6 +46,8 @@ public class BossTimerController implements Initializable
     private Label nextBossTime;
     @FXML
     private Label followBossTime;
+    @FXML
+    private Button appearBox;
 
     Timeline timeline = new Timeline(
             new KeyFrame(Duration.seconds(1),
@@ -56,6 +60,7 @@ public class BossTimerController implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        appearTransition();
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
@@ -214,5 +219,19 @@ public class BossTimerController implements Initializable
         setNextBossName();
         followBossTime.setText(followBossTime_hour + ":" + followBossTime_minute + ":" + followBossTime_second);
         setFollowBossName();
+    }
+
+    public void appearTransition()
+    {
+        //time for transition to complete
+        double transDuration = 1.3;
+        //Create new translate transition
+        TranslateTransition transition = new TranslateTransition();
+        transition.setDuration(Duration.seconds(transDuration));
+        transition.setNode(appearBox);
+        //Move in Y axis by 1440
+        transition.setToY(1440);
+
+        transition.play();
     }
 }

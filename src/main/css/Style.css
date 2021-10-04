@@ -24,3 +24,13 @@
 .FontAwesomeIcon:hover{
     -fx-cursor: hand;
 }
+
+.shortCuts{
+    -fx-background-color: #424470;
+    -fx-background-radius: 10 10 10 10;
+}
+
+.shortCuts:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #565996;
+}

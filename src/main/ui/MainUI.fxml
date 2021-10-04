@@ -50,7 +50,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" prefWidth="270.0" styleClass="sidebarItem" text="Simulator" textFill="#d0d0d0">
+                        <JFXButton alignment="BASELINE_LEFT" onAction="#loadSimulator" prefWidth="270.0" styleClass="sidebarItem" text="Simulator" textFill="#d0d0d0">
                            <font>
                               <Font name="AvQest" size="30.0" />
                            </font>
@@ -62,7 +62,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" prefWidth="270.0" styleClass="sidebarItem" text="Setting" textFill="#d0d0d0">
+                        <JFXButton alignment="BASELINE_LEFT" onAction="#loadSetting" prefWidth="270.0" styleClass="sidebarItem" text="Setting" textFill="#d0d0d0">
                            <font>
                               <Font name="AvQest" size="30.0" />
                            </font>
@@ -152,7 +152,7 @@
          <bottom>
             <AnchorPane maxHeight="25.0" maxWidth="1700.0" prefHeight="25.0" prefWidth="1700.0" style="-fx-background-color: #252530;" BorderPane.alignment="CENTER_RIGHT">
                <children>
-                  <Label layoutX="618.0" layoutY="1.0" prefHeight="25.0" prefWidth="614.0" text="© 2021 BDOStuff. All right reserved." textFill="#d0d0d0" AnchorPane.leftAnchor="618.0" AnchorPane.rightAnchor="468.0" AnchorPane.topAnchor="0.0">
+                  <Label layoutX="698.0" layoutY="1.0" prefHeight="25.0" prefWidth="458.0" text="© 2021 BDOStuff. All right reserved." textFill="#d0d0d0" AnchorPane.leftAnchor="698.0" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="Cambria Math" size="20.0" />
                      </font>

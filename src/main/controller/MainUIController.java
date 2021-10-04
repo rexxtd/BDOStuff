@@ -1,6 +1,5 @@
 package main.controller;
 
-import com.dustinredmond.fxtrayicon.FXTrayIcon;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -14,7 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.FxmlLoader;
-import main.Main;
+
 import main.module.MainUIModule;
 
 import java.io.IOException;
@@ -166,6 +165,22 @@ public class MainUIController implements Initializable
     {
         FxmlLoader object = new FxmlLoader();
         Pane view = object.getPage("BossTimer");
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    private void loadSetting(ActionEvent event) throws IOException
+    {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Setting");
+        mainPane.setCenter(view);
+    }
+
+    @FXML
+    private void loadSimulator(ActionEvent event) throws IOException
+    {
+        FxmlLoader object = new FxmlLoader();
+        Pane view = object.getPage("Simulator");
         mainPane.setCenter(view);
     }
 

@@ -1,70 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.HomeScreenController">
    <children>
-      <VBox alignment="TOP_CENTER" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label text="Welcome" textFill="WHITE">
-               <font>
-                  <Font name="NSimSun" size="37.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="140.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="BDO STUFF" textFill="#eb4040">
-               <font>
-                  <Font name="AvQest" size="56.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="50.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="is an application provides some important information about Black Desert," textFill="#dddddd">
-               <font>
-                  <Font name="NSimSun" size="26.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </Label>
-            <Label text="It also helps player to simulate some RNG stuff in the game," textFill="#dddddd">
-               <font>
-                  <Font name="NSimSun" size="26.0" />
-               </font>
-            </Label>
-            <Label text="so they can prepare themselves before the actual run." textFill="#dddddd">
-               <font>
-                  <Font name="NSimSun" size="26.0" />
-               </font>
-            </Label>
-            <Label text="Want to have some fun? Let's begin and also" textFill="#dddddd">
-               <font>
-                  <Font name="NSimSun" size="26.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="60.0" />
-               </VBox.margin>
-            </Label>
-            <ImageView fitHeight="114.0" fitWidth="356.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/icon/discord-button.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </ImageView>
-         </children>
-      </VBox>
-      <Hyperlink layoutX="555.0" layoutY="568.0" onAction="#DiscordLink" opacity="0.0" prefHeight="114.0" prefWidth="356.0" text="Hyperlink" />
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" layoutY="10.0" prefHeight="830.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vbarPolicy="ALWAYS" vmax="0.5">
+         <content>
+            <AnchorPane prefHeight="845.0" prefWidth="1421.0" style="-fx-background-color: #252530;">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxHeight="600.0" minHeight="491.0" prefHeight="491.0" prefWidth="1421.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="46.0" prefWidth="155.0" text="Welcome" textFill="#d3d3d3">
+                           <font>
+                              <Font name="NSimSun" size="44.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="70.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label alignment="CENTER" text="BDO STUFF" textFill="#eb4040">
+                           <font>
+                              <Font name="AvQest" size="56.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefWidth="950.0" text="is an application provides some important information about Black Desert," textFill="#dddddd">
+                           <font>
+                              <Font name="NSimSun" size="26.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="950.0" text="It also helps player to simulate some RNG stuff in the game,so they can" textFill="#dddddd">
+                           <font>
+                              <Font name="NSimSun" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="950.0" text="prepare themselves before the actual run." textFill="#dddddd">
+                           <font>
+                              <Font name="NSimSun" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label contentDisplay="RIGHT" prefWidth="950.0" text="Want to have some fun? Let's begin and also " textFill="#dddddd">
+                           <font>
+                              <Font name="NSimSun" size="26.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <graphic>
+                              <ImageView fitHeight="86.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/icon/discord-button.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Hyperlink layoutX="813.0" layoutY="393.0" onAction="#DiscordLink" opacity="0.0" prefHeight="84.0" prefWidth="265.0" text="Hyperlink" />
+                  <Label layoutX="346.0" layoutY="592.0" text="Here are the shortcuts to :" textFill="#d3d3d3">
+                     <font>
+                        <Font name="Lucida Bright Regular" size="25.0" />
+                     </font>
+                     <graphic>
+                        <Label text="There are so many stuffs in here?" textFill="#d3d3d3">
+                           <font>
+                              <Font name="Lucida Bright Regular" size="25.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </Label>
+                  <HBox alignment="CENTER" layoutY="639.0" prefHeight="100.0" prefWidth="1421.0" spacing="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <JFXButton onAction="#loadSimulator" prefHeight="60.0" prefWidth="337.0" styleClass="shortCuts" stylesheets="@../css/Style.css" text="Gear Enhancement" textFill="#cac0ff">
+                           <font>
+                              <Font name="AvQest" size="34.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#loadBossTimer" prefHeight="60.0" prefWidth="337.0" styleClass="shortCuts" stylesheets="@../css/Style.css" text="Boss Timer" textFill="#cac0ff">
+                           <font>
+                              <Font name="AvQest" size="34.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#loadDonate" prefHeight="60.0" prefWidth="337.0" styleClass="shortCuts" stylesheets="@../css/Style.css" text="About me" textFill="#cac0ff">
+                           <font>
+                              <Font name="AvQest" size="34.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                  </HBox>
+                  <JFXButton fx:id="appearBox" buttonType="RAISED" layoutX="10.0" layoutY="8.0" prefHeight="850.0" prefWidth="1421.0" style="-fx-background-color: #252530;" textFill="#252530" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
