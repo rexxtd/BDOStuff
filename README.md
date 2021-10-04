@@ -16,9 +16,9 @@ I developed this application as a fun project, and to learn more about Java and 
 
 ### Built With
 - Java
-- JavaFX
+- XML
 - CSS
-- MySQL
+- SQL
 
 
 ### Pearl Abyss
