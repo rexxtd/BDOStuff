@@ -152,7 +152,7 @@
          <bottom>
             <AnchorPane maxHeight="25.0" maxWidth="1700.0" prefHeight="25.0" prefWidth="1700.0" style="-fx-background-color: #252530;" BorderPane.alignment="CENTER_RIGHT">
                <children>
-                  <Label layoutX="698.0" layoutY="1.0" prefHeight="25.0" prefWidth="458.0" text="© 2021 BDOStuff. All right reserved." textFill="#d0d0d0" AnchorPane.leftAnchor="698.0" AnchorPane.rightAnchor="544.0" AnchorPane.topAnchor="0.0">
+                  <Label layoutX="628.0" layoutY="1.0" prefHeight="25.0" prefWidth="577.0" text="© 2021 BDOStuff. Developed by Tuan Dat" textFill="#d0d0d0" AnchorPane.leftAnchor="628.0" AnchorPane.rightAnchor="495.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font name="Cambria Math" size="20.0" />
                      </font>

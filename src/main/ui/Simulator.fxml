@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.SimulatorController">
@@ -20,28 +27,128 @@
                      <font>
                         <Font name="AvQest" size="39.0" />
                      </font>
+                     <effect>
+                        <Glow level="0.6" />
+                     </effect>
                   </Label>
-                  <JFXComboBox fx:id="function" focusColor="#424470" layoutX="269.0" layoutY="46.0" prefHeight="46.0" prefWidth="310.0" stylesheets="@../css/Simulator.css" unFocusColor="#424470" />
-                  <HBox fx:id="enhanceCate" alignment="CENTER_LEFT" layoutX="585.0" layoutY="46.0" prefHeight="65.0" prefWidth="771.0" spacing="10.0">
+                  <JFXComboBox fx:id="function" focusColor="#424470" layoutX="269.0" layoutY="46.0" prefHeight="65.0" prefWidth="330.0" promptText="  SELECT FUNCTION" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                     <effect>
+                        <DropShadow />
+                     </effect></JFXComboBox>
+                  <ImageView fx:id="simulatorIcon" fitHeight="19.0" fitWidth="19.0" layoutX="613.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@../img/icon/question.png" />
+                     </image>
+                  </ImageView>
+                  <Pane fx:id="simulatorBox" layoutX="640.0" layoutY="62.0" opacity="0.85" prefHeight="32.0" prefWidth="291.0" styleClass="pane" stylesheets="@../css/Simulator.css" visible="false">
                      <children>
-                        <Label text="&gt;" textFill="#cac0ff">
+                        <Label layoutX="8.0" layoutY="5.0" prefHeight="24.0" prefWidth="278.0" text="Choose which function you want to simulate" textFill="#cfc9ff">
                            <font>
-                              <Font name="AvQest" size="39.0" />
+                              <Font name="Calibri" size="15.0" />
                            </font>
+                           <effect>
+                              <Glow level="0.5" />
+                           </effect>
                         </Label>
-                        <JFXComboBox fx:id="type" focusColor="#424470" prefHeight="57.0" prefWidth="310.0" stylesheets="@../css/Simulator.css" unFocusColor="#424470" />
-                        <Label text="&gt;" textFill="#cac0ff">
-                           <font>
-                              <Font name="AvQest" size="39.0" />
-                           </font>
-                        </Label>
-                        <JFXComboBox fx:id="level" focusColor="#424470" prefHeight="65.0" prefWidth="255.0" stylesheets="@../css/Simulator.css" unFocusColor="#424470" />
                      </children>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </HBox>
-                  <AnchorPane layoutX="3.0" layoutY="156.0" prefHeight="2000.0" prefWidth="1421.0" />
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Pane>
+                  <AnchorPane fx:id="enhancePane" layoutX="3.0" layoutY="138.0" prefHeight="2018.0" prefWidth="1421.0">
+                     <children>
+                        <JFXCheckBox fx:id="realCheckBox" checkedColor="#a597ff" contentDisplay="RIGHT" layoutX="37.0" layoutY="3.0" prefHeight="53.0" text="real ingame enhancement (beta)" textFill="#cac0ff" unCheckedColor="#cac0ff">
+                           <font>
+                              <Font name="AvQest" size="26.0" />
+                           </font>
+                           <effect>
+                              <Glow level="0.6" />
+                           </effect>
+                        </JFXCheckBox>
+                        <ImageView fx:id="realIcon" fitHeight="19.0" fitWidth="19.0" layoutX="456.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                           <image>
+                              <Image url="@../img/icon/question.png" />
+                           </image>
+                        </ImageView>
+                        <HBox fx:id="enhanceCate" alignment="CENTER_LEFT" layoutX="14.0" layoutY="67.0" prefHeight="65.0" prefWidth="1205.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="equip" focusColor="#424470" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT EQUIP" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                              <Label text="&gt;" textFill="#cac0ff">
+                                 <font>
+                                    <Font name="AvQest" size="39.0" />
+                                 </font>
+                              </Label>
+                              <JFXComboBox fx:id="type" focusColor="#424470" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT TYPE" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                              <Label text="&gt;" textFill="#cac0ff">
+                                 <font>
+                                    <Font name="AvQest" size="39.0" />
+                                 </font>
+                              </Label>
+                              <JFXComboBox fx:id="level" focusColor="#424470" prefHeight="65.0" prefWidth="255.0" promptText="  SELECT LEVEL" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <Pane fx:id="realBox" layoutX="485.0" opacity="0.74" prefHeight="90.0" prefWidth="340.0" styleClass="pane" stylesheets="@../css/Simulator.css" visible="false">
+                           <children>
+                              <VBox layoutX="15.0" layoutY="9.0" prefHeight="75.0" prefWidth="333.0">
+                                 <children>
+                                    <Label prefHeight="24.0" prefWidth="335.0" text="You can simulate exactly the same experience just" textFill="#cfc9ff">
+                                       <font>
+                                          <Font name="Calibri" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Glow level="0.5" />
+                                       </effect>
+                                    </Label>
+                                    <Label prefHeight="24.0" prefWidth="335.0" text="like ingame (failstack increase/lost, increase / " textFill="#cfc9ff">
+                                       <font>
+                                          <Font name="Calibri" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Glow level="0.5" />
+                                       </effect>
+                                    </Label>
+                                    <Label prefHeight="24.0" prefWidth="303.0" text="decrease gear level, etc..)" textFill="#cfc9ff">
+                                       <font>
+                                          <Font name="Calibri" size="15.0" />
+                                       </font>
+                                       <effect>
+                                          <Glow level="0.5" />
+                                       </effect>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Pane>
+                        <Label fx:id="typeStore" layoutX="379.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="equipStore" layoutX="28.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
+                        <Label fx:id="levelStore" layoutX="736.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
+                        <ImageView fitHeight="822.0" fitWidth="960.0" layoutX="36.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/data/enhanceUI.png" />
+                           </image>
+                           <effect>
+                              <DropShadow blurType="TWO_PASS_BOX" height="30.72" radius="17.872500000000002" spread="0.18" width="42.77" />
+                           </effect>
+                        </ImageView>
+                     </children></AnchorPane>
                </children>
             </AnchorPane>
          </content>
