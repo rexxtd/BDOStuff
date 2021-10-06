@@ -1,6 +1,8 @@
 package main.controller;
 
 import javafx.animation.FadeTransition;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,49 +18,45 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.util.Duration;
+import main.FxmlLoader;
 import main.module.SimulatorModule;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SimulatorController implements Initializable
 {
     String[] simulator = {"Enhancement", "Fairy Sprouting", "Pet Exchange", "Horse Leveling"};
-    String[] enhanceData;
     String[] enhanceEquip = {"Weapon", "Armor", "Accessory"};
     String[] enhanceType = {"Blue/Yellow", "Green", "Blackstar", "Fallen God's", "Tuvala"};
     String[] enhanceLevel = {"9->10","10->11","12->13","13->14","14->15","15->PRI","PRI->DOU", "DOU->TRI", "TRI->TET", "TET->PEN"};
     SimulatorModule simulatorModule = new SimulatorModule();
-    String functionOption = "Enhancement";     //set it to default option
-    String typeOption,equipOption,levelOption;
+    String functionOption = "";     //set it to default option
 
     boolean isSelected;
 
     @FXML
-    private ComboBox<String> function;
+    private ComboBox<String> function,equip,type,level;
     @FXML
-    private ComboBox<String> equip;
+    private Button appearBox, applyButton;
     @FXML
-    private ComboBox<String> type;
+    private ImageView realIcon, simulatorIcon, enhanceImg;
     @FXML
-    private ComboBox<String> level;
-    @FXML
-    private Button appearBox;
-    @FXML
-    private ImageView realIcon;
-    @FXML
-    private ImageView simulatorIcon;
-    @FXML
-    private Pane realBox;
-    @FXML
-    private Pane simulatorBox;
+    private Pane realBox, simulatorBox, equipPane, typePane, levelPane;
     @FXML
     private CheckBox realCheckBox;
     @FXML
     private AnchorPane enhancePane;
     @FXML
     private Label equipStore,levelStore,typeStore;
+    @FXML
+    private MediaView enhanceVid;
 
     //for fade transition
     private FadeTransition fadeIn = new FadeTransition(
@@ -88,6 +86,15 @@ public class SimulatorController implements Initializable
                 {
                     isSelected = realCheckBox.isSelected();
                 });
+        enhanceEffect();
+    }
+
+    public void enhanceEffect()
+    {
+        File path = new File("src/main/eff/1.mp4");
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(path.toURI().toString()));
+        enhanceVid.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setAutoPlay(true);
     }
 
     public void iconHoverEffect(ImageView icon, Pane box)
@@ -148,13 +155,23 @@ public class SimulatorController implements Initializable
             data.add(enhanceEquip[i]);
         }
         equip.setItems(data);
+        //equip.getSelectionModel().selectFirst();
 
         // Create action event
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
+                //reset other selection
+                type.valueProperty().set(null);
+                level.valueProperty().set(null);
+                enhanceImg.setVisible(false);
+
                 equipStore.setText(equip.getValue());
-                enhanceData[0] = equipStore.getText();
+                typePane.setVisible(true);
+                fadeIn.setNode(typePane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
             }
         };
         equip.setOnAction(event);
@@ -173,7 +190,16 @@ public class SimulatorController implements Initializable
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
+                //reset other selection
+                level.valueProperty().set(null);
+                enhanceImg.setVisible(false);
+
                 typeStore.setText(type.getValue());
+                levelPane.setVisible(true);
+                fadeIn.setNode(levelPane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
             }
         };
         type.setOnAction(event);
@@ -192,17 +218,36 @@ public class SimulatorController implements Initializable
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
+                enhanceImg.setVisible(false);
+
                 levelStore.setText(level.getValue());
+                applyButton.setVisible(true);
+                fadeIn.setNode(applyButton);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
             }
         };
         level.setOnAction(event);
     }
 
-    public void getEnhanceData()
+    @FXML
+    private void setApplyButton(ActionEvent event) throws IOException
     {
-        enhanceData[0] = equipStore.getText();
-        enhanceData[1] = typeStore.getText();
-        enhanceData[2] = levelStore.getText();
+        if (levelStore.getText() != "" && levelStore.getText() != null)
+        {
+            simulatorModule.getEnhanceSelection(equipStore.getText(),typeStore.getText(),levelStore.getText());
+            enhanceImg.setVisible(true);
+            fadeIn.setNode(enhanceImg);
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.playFromStart();
+        }
+        else
+        {
+            enhanceImg.setVisible(false);
+            System.out.println("Please select lv");
+        }
     }
 
     public void loadOption()
@@ -212,6 +257,27 @@ public class SimulatorController implements Initializable
             case "Enhancement":
             {
                 enhancePane.setVisible(true);
+                fadeIn.setNode(enhancePane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
+
+                equipPane.setVisible(true);
+                fadeIn.setNode(enhancePane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
+
+                equip.getItems().clear();
+                type.getItems().clear();
+                level.getItems().clear();
+
+                enhanceImg.setVisible(false);
+                enhanceVid.setVisible(false);
+                typePane.setVisible(false);
+                levelPane.setVisible(false);
+                applyButton.setVisible(false);
+
                 addEnhanceEquip();
                 addEnhanceType();
                 addEnhanceLevel();
@@ -220,13 +286,12 @@ public class SimulatorController implements Initializable
             case "Fairy Sprouting":
             {
                 enhancePane.setVisible(false);
-                type.getItems().clear();
-                level.getItems().clear();
                 break;
             }
             case "Pet Exchange":
             {
-
+                enhancePane.setVisible(false);
+                break;
             }
             case "Horse Leveling":
             {
@@ -235,7 +300,7 @@ public class SimulatorController implements Initializable
 
             default:
             {
-                System.out.println("Error has been occurred, please contact admin!");
+                System.out.println("Nothing selected");
                 break;
             }
         }

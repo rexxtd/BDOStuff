@@ -3,7 +3,6 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
@@ -11,9 +10,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.SimulatorController">
@@ -70,38 +69,43 @@
                               <Image url="@../img/icon/question.png" />
                            </image>
                         </ImageView>
-                        <HBox fx:id="enhanceCate" alignment="CENTER_LEFT" layoutX="14.0" layoutY="67.0" prefHeight="65.0" prefWidth="1205.0" spacing="10.0">
+                        <Pane fx:id="equipPane" layoutX="36.0" layoutY="44.0" prefHeight="105.0" prefWidth="335.0" visible="false">
                            <children>
-                              <JFXComboBox fx:id="equip" focusColor="#424470" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT EQUIP" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
-                              </JFXComboBox>
-                              <Label text="&gt;" textFill="#cac0ff">
-                                 <font>
-                                    <Font name="AvQest" size="39.0" />
-                                 </font>
-                              </Label>
-                              <JFXComboBox fx:id="type" focusColor="#424470" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT TYPE" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
-                              </JFXComboBox>
-                              <Label text="&gt;" textFill="#cac0ff">
-                                 <font>
-                                    <Font name="AvQest" size="39.0" />
-                                 </font>
-                              </Label>
-                              <JFXComboBox fx:id="level" focusColor="#424470" prefHeight="65.0" prefWidth="255.0" promptText="  SELECT LEVEL" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                              <JFXComboBox fx:id="equip" focusColor="#424470" layoutY="14.0" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT EQUIP" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
                                  <effect>
                                     <DropShadow />
                                  </effect>
                               </JFXComboBox>
                            </children>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </HBox>
+                        </Pane>
+                        <Pane fx:id="typePane" layoutX="362.0" layoutY="48.0" prefHeight="85.0" prefWidth="355.0" visible="false">
+                           <children>
+                              <Label layoutX="3.0" layoutY="15.0" text="&gt;" textFill="#cac0ff">
+                                 <font>
+                                    <Font name="AvQest" size="39.0" />
+                                 </font>
+                              </Label>
+                              <JFXComboBox fx:id="type" focusColor="#424470" layoutX="36.0" layoutY="10.0" prefHeight="50.0" prefWidth="310.0" promptText="   SELECT TYPE" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="levelPane" layoutX="725.0" layoutY="44.0" prefHeight="105.0" prefWidth="335.0" visible="false">
+                           <children>
+                              <Label layoutX="3.0" layoutY="19.0" text="&gt;" textFill="#cac0ff">
+                                 <font>
+                                    <Font name="AvQest" size="39.0" />
+                                 </font>
+                              </Label>
+                              <JFXComboBox fx:id="level" focusColor="#424470" layoutX="39.0" layoutY="15.0" prefHeight="65.0" prefWidth="272.0" promptText="  SELECT LEVEL" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                           </children>
+                        </Pane>
                         <Pane fx:id="realBox" layoutX="485.0" opacity="0.74" prefHeight="90.0" prefWidth="340.0" styleClass="pane" stylesheets="@../css/Simulator.css" visible="false">
                            <children>
                               <VBox layoutX="15.0" layoutY="9.0" prefHeight="75.0" prefWidth="333.0">
@@ -137,10 +141,18 @@
                               <DropShadow />
                            </effect>
                         </Pane>
-                        <Label fx:id="typeStore" layoutX="379.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
-                        <Label fx:id="equipStore" layoutX="28.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
-                        <Label fx:id="levelStore" layoutX="736.0" layoutY="132.0" opacity="0.0" text="Label" textFill="WHITE" />
-                        <ImageView fitHeight="822.0" fitWidth="960.0" layoutX="36.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                        <JFXButton fx:id="applyButton" layoutX="1096.0" layoutY="62.0" onAction="#setApplyButton" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #424470; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="APPLY" textFill="#cac0ff" visible="false">
+                           <font>
+                              <Font name="AvQest" size="22.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="38.1" radius="17.3825" width="33.43" />
+                           </effect>
+                        </JFXButton>
+                        <Label fx:id="equipStore" layoutX="39.0" layoutY="123.0" prefHeight="21.0" textFill="WHITE" />
+                        <Label fx:id="typeStore" layoutX="397.0" layoutY="131.0" prefHeight="21.0" textFill="WHITE" />
+                        <Label fx:id="levelStore" layoutX="769.0" layoutY="134.0" textFill="WHITE" />
+                        <ImageView fx:id="enhanceImg" fitHeight="822.0" fitWidth="960.0" layoutX="36.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../img/data/enhanceUI.png" />
                            </image>
@@ -148,6 +160,7 @@
                               <DropShadow blurType="TWO_PASS_BOX" height="30.72" radius="17.872500000000002" spread="0.18" width="42.77" />
                            </effect>
                         </ImageView>
+                        <MediaView fx:id="enhanceVid" fitHeight="422.0" fitWidth="720.0" layoutX="37.0" layoutY="349.0" visible="false" />
                      </children></AnchorPane>
                </children>
             </AnchorPane>
