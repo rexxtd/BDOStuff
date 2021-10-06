@@ -1,5 +1,6 @@
 package main.controller;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.animation.FadeTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
@@ -25,6 +26,7 @@ import javafx.util.Duration;
 import main.FxmlLoader;
 import main.module.SimulatorModule;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -48,7 +50,7 @@ public class SimulatorController implements Initializable
     @FXML
     private ImageView realIcon, simulatorIcon, enhanceImg;
     @FXML
-    private Pane realBox, simulatorBox, equipPane, typePane, levelPane;
+    private Pane realBox, simulatorBox, equipPane, typePane, levelPane, enhanceUI;
     @FXML
     private CheckBox realCheckBox;
     @FXML
@@ -86,12 +88,11 @@ public class SimulatorController implements Initializable
                 {
                     isSelected = realCheckBox.isSelected();
                 });
-        enhanceEffect();
     }
 
     public void enhanceEffect()
     {
-        File path = new File("src/main/eff/1.mp4");
+        File path = new File("src/main/eff/3.mp4");
         MediaPlayer mediaPlayer = new MediaPlayer(new Media(path.toURI().toString()));
         enhanceVid.setMediaPlayer(mediaPlayer);
         mediaPlayer.setAutoPlay(true);
@@ -164,7 +165,7 @@ public class SimulatorController implements Initializable
                 //reset other selection
                 type.valueProperty().set(null);
                 level.valueProperty().set(null);
-                enhanceImg.setVisible(false);
+                enhanceUI.setVisible(false);
 
                 equipStore.setText(equip.getValue());
                 typePane.setVisible(true);
@@ -192,7 +193,7 @@ public class SimulatorController implements Initializable
             {
                 //reset other selection
                 level.valueProperty().set(null);
-                enhanceImg.setVisible(false);
+                enhanceUI.setVisible(false);
 
                 typeStore.setText(type.getValue());
                 levelPane.setVisible(true);
@@ -218,7 +219,7 @@ public class SimulatorController implements Initializable
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
             {
-                enhanceImg.setVisible(false);
+                enhanceUI.setVisible(false);
 
                 levelStore.setText(level.getValue());
                 applyButton.setVisible(true);
@@ -232,20 +233,26 @@ public class SimulatorController implements Initializable
     }
 
     @FXML
+    private void setEnhanceButton(ActionEvent event) throws IOException
+    {
+        enhanceEffect();
+    }
+
+    @FXML
     private void setApplyButton(ActionEvent event) throws IOException
     {
         if (levelStore.getText() != "" && levelStore.getText() != null)
         {
             simulatorModule.getEnhanceSelection(equipStore.getText(),typeStore.getText(),levelStore.getText());
-            enhanceImg.setVisible(true);
-            fadeIn.setNode(enhanceImg);
+            enhanceUI.setVisible(true);
+            fadeIn.setNode(enhanceUI);
             fadeIn.setFromValue(0.0);
             fadeIn.setToValue(1.0);
             fadeIn.playFromStart();
         }
         else
         {
-            enhanceImg.setVisible(false);
+            enhanceUI.setVisible(false);
             System.out.println("Please select lv");
         }
     }
@@ -272,8 +279,7 @@ public class SimulatorController implements Initializable
                 type.getItems().clear();
                 level.getItems().clear();
 
-                enhanceImg.setVisible(false);
-                enhanceVid.setVisible(false);
+                enhanceUI.setVisible(false);
                 typePane.setVisible(false);
                 levelPane.setVisible(false);
                 applyButton.setVisible(false);
