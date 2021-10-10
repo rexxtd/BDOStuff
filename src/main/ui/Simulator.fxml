@@ -22,7 +22,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.SimulatorController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vbarPolicy="ALWAYS">
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vbarPolicy="ALWAYS" vvalue="0.22">
          <content>
             <AnchorPane prefHeight="2000.0" prefWidth="1421.0" style="-fx-background-color: #252530;">
                <children>
@@ -157,7 +157,7 @@
                         <Label fx:id="equipStore" layoutX="39.0" layoutY="123.0" prefHeight="21.0" textFill="WHITE" />
                         <Label fx:id="typeStore" layoutX="397.0" layoutY="131.0" prefHeight="21.0" textFill="WHITE" />
                         <Label fx:id="levelStore" layoutX="769.0" layoutY="134.0" textFill="WHITE" />
-                        <Pane fx:id="enhanceUI" layoutX="36.0" layoutY="196.0" prefHeight="845.0" prefWidth="1378.0" visible="false">
+                        <Pane fx:id="enhanceUI" layoutX="36.0" layoutY="196.0" prefHeight="845.0" prefWidth="1378.0">
                            <children>
                               <ImageView fx:id="enhanceImg" fitHeight="896.0" fitWidth="598.0" layoutX="19.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -198,9 +198,9 @@
                                     <Font name="Segoe MDL2 Assets" size="19.0" />
                                  </font>
                               </Label>
-                              <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" layoutX="713.0" prefHeight="185.0" prefWidth="600.0" style="-fx-background-color: #2f2f3d;" stylesheets="@../css/Scrollbar.css" vbarPolicy="NEVER" vmax="0.0">
+                              <ScrollPane fx:id="displayResultBox" hbarPolicy="NEVER" hmax="0.0" hmin="1.0" layoutX="713.0" prefHeight="270.0" prefWidth="600.0" style="-fx-background-color: #2f2f3d;" stylesheets="@../css/Scrollbar.css" vbarPolicy="NEVER" vmax="0.0">
                                  <content>
-                                    <AnchorPane prefHeight="184.0" prefWidth="601.0" style="-fx-background-color: #2f2f3d;">
+                                    <AnchorPane prefHeight="271.0" prefWidth="601.0" style="-fx-background-color: #2f2f3d;">
                                        <children>
                                           <Label layoutX="241.0" text="Result" textFill="#cac0ff">
                                              <font>
@@ -258,6 +258,14 @@
                                                 <Bloom threshold="0.38" />
                                              </effect>
                                           </Label>
+                                          <JFXButton buttonType="RAISED" layoutX="246.0" layoutY="194.0" onAction="#setClearButton" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: #6f72c7; -fx-border-radius: 10px; -fx-background-radius: 8;" text="CLEAR" textFill="#fcfbff">
+                                             <font>
+                                                <Font name="AvQest" size="18.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
                                        </children>
                                     </AnchorPane>
                                  </content>
@@ -273,7 +281,7 @@
                                     <Glow level="0.6" />
                                  </effect>
                               </JFXCheckBox>
-                              <Pane fx:id="addFailstackBox" layoutX="570.0" layoutY="464.0" prefHeight="150.0" prefWidth="349.0" styleClass="pane" stylesheets="@../css/Simulator.css" visible="false">
+                              <Pane fx:id="addFailstackBox" layoutX="570.0" layoutY="464.0" prefHeight="150.0" prefWidth="349.0" styleClass="pane" stylesheets="@../css/Simulator.css">
                                  <children>
                                     <Label alignment="TOP_CENTER" layoutX="17.0" layoutY="16.0" prefHeight="37.0" text="Failstack:" textAlignment="CENTER" textFill="#cfc9ff">
                                        <font>
@@ -291,10 +299,13 @@
                                           <Reflection fraction="0.63" topOffset="3.5" topOpacity="0.49" />
                                        </effect>
                                     </TextField>
-                                    <JFXButton buttonType="RAISED" layoutX="208.0" layoutY="70.0" onAction="#setAddFailstackButton" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: #6f72c7; -fx-border-radius: 10px; -fx-background-radius: 8; -fx-cursor: hand;" text="ADD" textFill="#cac0ff">
+                                    <JFXButton buttonType="RAISED" layoutX="208.0" layoutY="70.0" onAction="#setAddFailstackButton" prefHeight="46.0" prefWidth="111.0" style="-fx-background-color: #6f72c7; -fx-border-radius: 10px; -fx-background-radius: 8;" text="ADD" textFill="#fcfbff">
                                        <font>
                                           <Font name="AvQest" size="18.0" />
                                        </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
                                     </JFXButton>
                                  </children>
                                  <effect>
@@ -316,6 +327,14 @@
                                     <Font name="SansSerif Regular" size="20.0" />
                                  </font>
                               </Label>
+                              <JFXButton fx:id="hideShowButton" buttonType="RAISED" layoutX="727.0" layoutY="12.0" onAction="#setHideShowButton" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #6f72c7; -fx-border-radius: 10px; -fx-background-radius: 8;" text="HIDE" textFill="#fcfbff">
+                                 <font>
+                                    <Font name="AvQest" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
                            </children>
                         </Pane>
                      </children></AnchorPane>

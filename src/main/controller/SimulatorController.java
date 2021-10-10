@@ -37,11 +37,12 @@ public class SimulatorController implements Initializable
 
     boolean realBoxIsSelected, muteBoxIsSelected;
     boolean addFailstackIsClicked = false;
+    boolean isHide = false;
 
     @FXML
     private ComboBox<String> function,equip,type,level;
     @FXML
-    private Button appearBox, applyButton;
+    private Button appearBox, applyButton, hideShowButton;
     @FXML
     private ImageView realIcon, simulatorIcon;
     @FXML
@@ -56,6 +57,8 @@ public class SimulatorController implements Initializable
     private MediaView enhanceVid;
     @FXML
     private TextField failstackTextField;
+    @FXML
+    private ScrollPane displayResultBox;
 
     //for fade transition
     private FadeTransition fadeIn = new FadeTransition(
@@ -256,7 +259,6 @@ public class SimulatorController implements Initializable
     @FXML
     private void setEnhanceButton(ActionEvent event) throws IOException
     {
-
         if (simulatorModule.getEnhanceResult())
         {
             enhanceEffect(true);
@@ -266,6 +268,36 @@ public class SimulatorController implements Initializable
         {
             enhanceEffect(false);
             failCount.setText(String.valueOf(Integer.parseInt(failCount.getText()) + 1));
+        }
+    }
+
+    @FXML
+    private void setClearButton(ActionEvent event)
+    {
+        successCount.setText("0");
+        failCount.setText("0");
+    }
+
+    @FXML
+    private void setHideShowButton(ActionEvent event)
+    {
+        if (isHide)
+        {
+            hideShowButton.setText("HIDE");
+            fadeIn.setNode(displayResultBox);
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.playFromStart();
+            isHide = false;
+        }
+        else
+        {
+            hideShowButton.setText("SHOW");
+            fadeIn.setNode(displayResultBox);
+            fadeIn.setFromValue(1.0);
+            fadeIn.setToValue(0.0);
+            fadeIn.playFromStart();
+            isHide = true;
         }
     }
 
