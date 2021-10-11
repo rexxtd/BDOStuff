@@ -1,0 +1,6 @@
+﻿Level,Base Rate,Softcap
+0->PRI,42,7
+PRI->DUO,25.66666,18
+DUO->TRI,18,29
+TRI->TET,13.22222,43
+TET->PEN,10.08,60

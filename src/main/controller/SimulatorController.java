@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.animation.TranslateTransition;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -29,8 +30,8 @@ public class SimulatorController implements Initializable
 {
     String[] simulator = {"Enhancement", "Fairy Sprouting", "Pet Exchange", "Horse Leveling"};
     String[] enhanceEquip = {"Weapon", "Armor", "Accessory"};
-    String[] enhanceType = {"Blue-Yellow", "Green", "Blackstar", "Fallen God's", "Tuvala"};
-    String[] enhanceLevel = {"9->10","10->11","12->13","13->14","14->15","15->PRI","PRI->DOU", "DOU->TRI", "TRI->TET", "TET->PEN"};
+    String[] enhanceType;
+    String[] enhanceLevel;
     SimulatorModule simulatorModule = new SimulatorModule();
     String functionOption = "";
     int totalFailstack;
@@ -44,7 +45,7 @@ public class SimulatorController implements Initializable
     @FXML
     private Button appearBox, applyButton, hideShowButton;
     @FXML
-    private ImageView realIcon, simulatorIcon;
+    private ImageView realIcon, simulatorIcon, enhanceItem, enhanceMaterial;
     @FXML
     private Pane realBox, simulatorBox, equipPane, typePane, levelPane, enhanceUI, addFailstackBox;
     @FXML
@@ -52,7 +53,7 @@ public class SimulatorController implements Initializable
     @FXML
     private AnchorPane enhancePane;
     @FXML
-    private Label equipStore,levelStore,typeStore, successCount, failCount, failstackDisplay, totalAddedRateDisplay, totalPercentDisplay;
+    private Label equipStore,levelStore,typeStore, successCount, failCount, failstackDisplay, totalAddedRateDisplay, totalPercentDisplay, itemLevelDisplay;
     @FXML
     private MediaView enhanceVid;
     @FXML
@@ -180,7 +181,6 @@ public class SimulatorController implements Initializable
             data.add(enhanceEquip[i]);
         }
         equip.setItems(data);
-        //equip.getSelectionModel().selectFirst();
 
         // Create action event
         EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
@@ -197,6 +197,7 @@ public class SimulatorController implements Initializable
                 fadeIn.setFromValue(0.0);
                 fadeIn.setToValue(1.0);
                 fadeIn.playFromStart();
+                addEnhanceType();
             }
         };
         equip.setOnAction(event);
@@ -204,6 +205,24 @@ public class SimulatorController implements Initializable
 
     public void addEnhanceType()
     {
+        //check if equip is weapon, armor or accessory
+        if (equipStore.getText() == "Weapon")
+        {
+            String[] temp = {"Blue-Yellow", "Green", "Blackstar", "Tuvala"};
+            enhanceType = temp;
+        }
+        else if (equipStore.getText() == "Armor")
+        {
+            String[] temp = {"Blue-Yellow", "Green", "Blackstar", "Fallen God's", "Tuvala"};
+            enhanceType = temp;
+        }
+        else if (equipStore.getText() == "Accessory")
+        {
+            String[] temp = {"Green-Blue-Yellow", "Tuvala"};
+            enhanceType = temp;
+        }
+
+        //generate to Type ComboBox
         ObservableList<String> data = FXCollections.observableArrayList();
         for (int i = 0; i< enhanceType.length; i++)
         {
@@ -225,6 +244,7 @@ public class SimulatorController implements Initializable
                 fadeIn.setFromValue(0.0);
                 fadeIn.setToValue(1.0);
                 fadeIn.playFromStart();
+                addEnhanceLevel();
             }
         };
         type.setOnAction(event);
@@ -232,6 +252,31 @@ public class SimulatorController implements Initializable
 
     public void addEnhanceLevel()
     {
+        //check if equip or type have specific level enhance
+        if (equipStore.getText() == "Armor" && typeStore.getText() == "Fallen God's")
+        {
+            String[] temp = {"0->PRI","PRI->DUO", "DUO->TRI", "TRI->TET", "TET->PEN"};
+            enhanceLevel = temp;
+        }
+
+        else if (equipStore.getText() == "Accessory")
+        {
+            String[] temp = {"0->PRI", "PRI->DUO", "DUO->TRI", "TRI->TET", "TET->PEN"};
+            enhanceLevel = temp;
+        }
+
+        else if (typeStore.getText() == "Tuvala")
+        {
+            String[] temp = {"15->PRI", "PRI->DUO", "DUO->TRI", "TRI->TET", "TET->PEN"};
+            enhanceLevel = temp;
+        }
+
+        else
+        {
+            String[] temp = {"9->10", "10->11", "12->13", "13->14", "14->15", "15->PRI", "PRI->DUO", "DUO->TRI", "TRI->TET", "TET->PEN"};
+            enhanceLevel = temp;
+        }
+
         ObservableList<String> data = FXCollections.observableArrayList();
         for (int i = 0; i< enhanceLevel.length; i++)
         {
@@ -302,11 +347,128 @@ public class SimulatorController implements Initializable
     }
 
     @FXML
+    private void setCorrectItemMaterial()
+    {
+        File materialPath = null;
+        //set item image
+        File itemPath = new File("src/main/img/data/enhanceItem/" + typeStore.getText() + "_" + equipStore.getText() + ".png");
+        Image itemImage = new Image(itemPath.toURI().toString());
+        enhanceItem.setImage(itemImage);
+        //set material image
+        if (equipStore.getText() != "Accessory")
+        {
+            if (typeStore.getText() == "Blackstar")
+            {
+                for (int i = 0; i < enhanceLevel.length; i++)
+                {
+                    if (levelStore.getText() == enhanceLevel[i])
+                    {
+                        if (i >= 5)
+                        {
+                            materialPath = new File("src/main/img/data/material/Blackstar.png");
+                            break;
+                        }
+                        else
+                        {
+                            materialPath = new File("src/main/img/data/material/Concentrated Magical Black Stone_" + equipStore.getText() + ".png");
+                            break;
+                        }
+                    }
+                }
+            }
+
+            else if (typeStore.getText() == "Fallen God's")
+            {
+                materialPath = new File("src/main/img/data/material/Blackstar.png");
+            }
+
+            else if (typeStore.getText() == "Tuvala")
+            {
+                materialPath = new File("src/main/img/data/material/Tuvala.png");
+            }
+
+            else
+            {
+                for (int i = 0; i < enhanceLevel.length; i++)
+                {
+                    if (levelStore.getText() == enhanceLevel[i])
+                    {
+                        if (i >= 5)
+                        {
+                            materialPath = new File("src/main/img/data/material/Concentrated Magical Black Stone_" + equipStore.getText() + ".png");
+                            break;
+                        }
+                        else
+                        {
+                            materialPath = new File("src/main/img/data/material/Blackstone_" + equipStore.getText() + ".png");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        else
+        {
+            materialPath = new File("src/main/img/data/enhanceItem/" + typeStore.getText() + "_" + equipStore.getText() + ".png");
+        }
+        Image materialImage = new Image(materialPath.toURI().toString());
+        enhanceMaterial.setImage(materialImage);
+
+        //set level of item
+        String[] split = levelStore.getText().split("-");
+        String currentLevel = split[0];
+        String display;
+        switch (currentLevel)
+        {
+            case "0":
+            {
+                display = "";
+                break;
+            }
+            case "PRI":
+            {
+                display = "I";
+                break;
+            }
+            case "DUO":
+            {
+                display = "II";
+                break;
+            }
+            case "TRI":
+            {
+                display = "III";
+                break;
+            }
+            case "TET":
+            {
+                display = "IV";
+                break;
+            }
+            case "PEN":
+            {
+                display = "V";
+                break;
+            }
+            default:
+            {
+                display = "+ " + currentLevel;
+                break;
+            }
+        }
+        itemLevelDisplay.setText(display);
+    }
+
+    @FXML
     private void setApplyButton(ActionEvent event) throws IOException
     {
         if (levelStore.getText() != "" && levelStore.getText() != null)
         {
+            failstackDisplay.setText("+ 0");
+            //call the data
             simulatorModule.searchCsvLine(0, levelStore.getText(), typeStore.getText(), equipStore.getText());
+            //display basic UI with fade animation
             enhanceUI.setVisible(true);
             fadeIn.setNode(enhanceUI);
             fadeIn.setFromValue(0.0);
@@ -314,6 +476,7 @@ public class SimulatorController implements Initializable
             fadeIn.playFromStart();
             totalPercentDisplay.setText(Math.floor(simulatorModule.calculatePercent(0) * 100) / 100 + "%");
             totalAddedRateDisplay.setText(Math.floor(simulatorModule.addedRate() * 100) / 100 + "%");
+            setCorrectItemMaterial();
         }
         else
         {
@@ -411,8 +574,6 @@ public class SimulatorController implements Initializable
                 applyButton.setVisible(false);
 
                 addEnhanceEquip();
-                addEnhanceType();
-                addEnhanceLevel();
                 break;
             }
             case "Fairy Sprouting":
@@ -431,10 +592,7 @@ public class SimulatorController implements Initializable
             }
 
             default:
-            {
-                System.out.println("Nothing selected");
                 break;
-            }
         }
     }
 }

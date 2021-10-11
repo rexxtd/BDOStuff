@@ -22,7 +22,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.SimulatorController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vbarPolicy="ALWAYS" vvalue="0.22">
+      <ScrollPane hbarPolicy="NEVER" hmax="0.0" hmin="1.0" prefHeight="845.0" prefWidth="1440.0" style="-fx-background-color: #252530;" stylesheets="@../css/Scrollbar.css" vbarPolicy="ALWAYS">
          <content>
             <AnchorPane prefHeight="2000.0" prefWidth="1421.0" style="-fx-background-color: #252530;">
                <children>
@@ -146,7 +146,7 @@
                               <DropShadow />
                            </effect>
                         </Pane>
-                        <JFXButton fx:id="applyButton" layoutX="1096.0" layoutY="62.0" onAction="#setApplyButton" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #424470; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: hand;" text="APPLY" textFill="#cac0ff">
+                        <JFXButton fx:id="applyButton" buttonType="RAISED" layoutX="1096.0" layoutY="62.0" onAction="#setApplyButton" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #424470; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-cursor: hand;" text="APPLY" textFill="#cac0ff">
                            <font>
                               <Font name="AvQest" size="22.0" />
                            </font>
@@ -154,9 +154,9 @@
                               <DropShadow height="38.1" radius="17.3825" width="33.43" />
                            </effect>
                         </JFXButton>
-                        <Label fx:id="equipStore" layoutX="39.0" layoutY="123.0" prefHeight="21.0" textFill="WHITE" />
-                        <Label fx:id="typeStore" layoutX="397.0" layoutY="131.0" prefHeight="21.0" textFill="WHITE" />
-                        <Label fx:id="levelStore" layoutX="769.0" layoutY="134.0" textFill="WHITE" />
+                        <Label fx:id="equipStore" layoutX="39.0" layoutY="123.0" prefHeight="21.0" textFill="WHITE" visible="false" />
+                        <Label fx:id="typeStore" layoutX="397.0" layoutY="131.0" prefHeight="21.0" textFill="WHITE" visible="false" />
+                        <Label fx:id="levelStore" layoutX="769.0" layoutY="134.0" textFill="WHITE" visible="false" />
                         <Pane fx:id="enhanceUI" layoutX="36.0" layoutY="196.0" prefHeight="845.0" prefWidth="1378.0">
                            <children>
                               <ImageView fx:id="enhanceImg" fitHeight="896.0" fitWidth="598.0" layoutX="19.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
@@ -178,15 +178,29 @@
                                  </cursor>
                               </Button>
                               <MediaView fx:id="enhanceVid" fitHeight="310.0" fitWidth="595.0" layoutX="22.0" layoutY="124.0" />
-                              <ImageView fx:id="enhanceItem" fitHeight="51.0" fitWidth="47.0" layoutX="469.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="enhanceItem" fitHeight="47.0" fitWidth="47.0" layoutX="468.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+                                 <effect>
+                                    <Glow level="1.0" />
+                                 </effect>
                                  <image>
-                                    <Image url="@../img/data/weapon_1.png" />
+                                    <Image url="@../img/data/enhanceItem/Fallen%20God's_Armor.png" />
                                  </image>
                               </ImageView>
-                              <ImageView fx:id="material" fitHeight="47.0" fitWidth="44.0" layoutX="69.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+                              <Label fx:id="itemLevelDisplay" alignment="CENTER" contentDisplay="CENTER" layoutX="468.0" layoutY="262.0" prefHeight="47.0" prefWidth="47.0" text="+15" textFill="#fff1f1">
+                                 <font>
+                                    <Font name="Cambria" size="22.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow color="RED" height="11.67" radius="6.890000000000001" spread="0.59" width="17.89" />
+                                 </effect>
+                              </Label>
+                              <ImageView fx:id="enhanceMaterial" fitHeight="43.0" fitWidth="43.0" layoutX="69.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../img/data/material_1.png" />
+                                    <Image url="@../img/data/enhanceItem/Green-Blue-Yellow_Accessory.png" />
                                  </image>
+                                 <effect>
+                                    <Glow level="0.2" />
+                                 </effect>
                               </ImageView>
                               <ImageView fitHeight="39.0" fitWidth="72.0" layoutX="289.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
