@@ -13,6 +13,8 @@ I developed this application as a fun project, and to learn more about Java and 
 
 ![image](https://user-images.githubusercontent.com/73376155/135859982-c21f8e2f-27c4-4b34-8658-05b280bcabf3.png)
 
+![preview enhancement](https://user-images.githubusercontent.com/73376155/136763446-f69c0a94-7682-4d43-bbd0-d24ec04ddf48.gif)
+
 
 ### Built With
 - Java
