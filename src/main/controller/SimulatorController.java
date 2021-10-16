@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
 
 public class SimulatorController implements Initializable
 {
-    String[] simulator = {"Enhancement", "Fairy Sprouting", "Pet Exchange", "Horse Leveling"};
+    String[] simulator = {"Enhancement", "Fairy Simulator", "Pet Exchange"};
     String[] enhanceEquip = {"Weapon", "Armor", "Accessory"};
     String[] enhanceType;
     String[] enhanceLevel;
@@ -48,6 +48,10 @@ public class SimulatorController implements Initializable
     private ImageView realIcon, simulatorIcon, enhanceItem, enhanceMaterial;
     @FXML
     private Pane realBox, simulatorBox, equipPane, typePane, levelPane, enhanceUI, addFailstackBox;
+    @FXML
+    private Pane fairyPane;
+    @FXML
+    private Pane petPane;
     @FXML
     private CheckBox realCheckBox,muteBox;
     @FXML
@@ -308,6 +312,10 @@ public class SimulatorController implements Initializable
         {
             enhanceEffect(true);
             successCount.setText(String.valueOf(Integer.parseInt(successCount.getText()) + 1));
+            if (realBoxIsSelected)
+            {
+
+            }
         }
         else
         {
@@ -553,6 +561,8 @@ public class SimulatorController implements Initializable
             case "Enhancement":
             {
                 enhancePane.setVisible(true);
+                fairyPane.setVisible(false);
+                petPane.setVisible(false);
                 fadeIn.setNode(enhancePane);
                 fadeIn.setFromValue(0.0);
                 fadeIn.setToValue(1.0);
@@ -576,19 +586,27 @@ public class SimulatorController implements Initializable
                 addEnhanceEquip();
                 break;
             }
-            case "Fairy Sprouting":
+            case "Fairy Simulator":
             {
                 enhancePane.setVisible(false);
+                fairyPane.setVisible(true);
+                petPane.setVisible(false);
+                fadeIn.setNode(fairyPane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
                 break;
             }
             case "Pet Exchange":
             {
                 enhancePane.setVisible(false);
+                fairyPane.setVisible(false);
+                petPane.setVisible(true);
+                fadeIn.setNode(petPane);
+                fadeIn.setFromValue(0.0);
+                fadeIn.setToValue(1.0);
+                fadeIn.playFromStart();
                 break;
-            }
-            case "Horse Leveling":
-            {
-
             }
 
             default:

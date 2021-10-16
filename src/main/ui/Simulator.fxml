@@ -26,7 +26,6 @@
          <content>
             <AnchorPane prefHeight="2000.0" prefWidth="1421.0" style="-fx-background-color: #252530;">
                <children>
-                  <JFXButton fx:id="appearBox" buttonType="RAISED" layoutX="2.0" prefHeight="883.0" prefWidth="1418.0" style="-fx-background-color: #252530;" textFill="#252530" visible="false" />
                   <Label layoutX="43.0" layoutY="50.0" text="Simulator &gt; " textFill="#cac0ff">
                      <font>
                         <Font name="AvQest" size="39.0" />
@@ -59,7 +58,7 @@
                         <DropShadow />
                      </effect>
                   </Pane>
-                  <AnchorPane fx:id="enhancePane" layoutX="2.0" layoutY="125.0" prefHeight="2018.0" prefWidth="1421.0">
+                  <AnchorPane fx:id="enhancePane" layoutX="2.0" layoutY="125.0" prefHeight="2018.0" prefWidth="1421.0" visible="false">
                      <children>
                         <JFXCheckBox fx:id="realCheckBox" checkedColor="#a597ff" contentDisplay="RIGHT" layoutX="29.0" layoutY="4.0" prefHeight="53.0" style="-fx-cursor: hand;" text="real ingame enhancement (beta)" textFill="#cac0ff" unCheckedColor="#cac0ff">
                            <font>
@@ -182,9 +181,6 @@
                                  <effect>
                                     <Glow level="1.0" />
                                  </effect>
-                                 <image>
-                                    <Image url="@../img/data/enhanceItem/Fallen%20God's_Armor.png" />
-                                 </image>
                               </ImageView>
                               <Label fx:id="itemLevelDisplay" alignment="CENTER" contentDisplay="CENTER" layoutX="468.0" layoutY="262.0" prefHeight="47.0" prefWidth="47.0" text="+15" textFill="#fff1f1">
                                  <font>
@@ -295,7 +291,7 @@
                                     <Glow level="0.6" />
                                  </effect>
                               </JFXCheckBox>
-                              <Pane fx:id="addFailstackBox" layoutX="570.0" layoutY="464.0" prefHeight="150.0" prefWidth="349.0" styleClass="pane" stylesheets="@../css/Simulator.css">
+                              <Pane fx:id="addFailstackBox" layoutX="570.0" layoutY="464.0" prefHeight="150.0" prefWidth="349.0" styleClass="pane" stylesheets="@../css/Simulator.css" visible="false">
                                  <children>
                                     <Label alignment="TOP_CENTER" layoutX="17.0" layoutY="16.0" prefHeight="37.0" text="Failstack:" textAlignment="CENTER" textFill="#cfc9ff">
                                        <font>
@@ -352,6 +348,34 @@
                            </children>
                         </Pane>
                      </children></AnchorPane>
+                  <AnchorPane fx:id="fairyPane" layoutX="2.0" layoutY="125.0" prefHeight="527.0" prefWidth="1421.0" visible="false">
+                     <children>
+                        <Pane fx:id="equipPane1" layoutX="35.0" layoutY="35.0" prefHeight="105.0" prefWidth="335.0" visible="false">
+                           <children>
+                              <JFXComboBox focusColor="#424470" layoutY="13.0" prefHeight="50.0" prefWidth="310.0" promptText="   FAIRY OPENING" styleClass="text-field" stylesheets="@../css/Simulator.css" unFocusColor="#424470">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </JFXComboBox>
+                           </children>
+                        </Pane>
+                        <Label layoutX="551.0" layoutY="288.0" text="Coming soon" textFill="#ffeaea">
+                           <font>
+                              <Font name="AvQest" size="55.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="petPane" layoutX="2.0" layoutY="124.0" prefHeight="618.0" prefWidth="1421.0" visible="false">
+                     <children>
+                        <Label layoutX="551.0" layoutY="288.0" text="Coming soon" textFill="#ffeaea">
+                           <font>
+                              <Font name="AvQest" size="55.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="appearBox" buttonType="RAISED" prefHeight="845.0" prefWidth="1418.0" style="-fx-background-color: #252530;" text="Che" textFill="#252530" />
                </children>
             </AnchorPane>
          </content>

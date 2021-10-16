@@ -72,14 +72,14 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="394.0" prefHeight="50.0" prefWidth="1177.0" styleClass="bossTableTop" AnchorPane.leftAnchor="131.0" AnchorPane.rightAnchor="132.0">
+                  <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="394.0" minWidth="1172.0" prefHeight="50.0" prefWidth="1177.0" styleClass="bossTableTop">
                      <children>
                         <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="UTC +7" textFill="WHITE">
                            <font>
                               <Font name="SansSerif Regular" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Monday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="138.0" text="Monday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
@@ -89,27 +89,27 @@
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Wednesday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="137.0" text="Wednesday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Thursday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="156.0" text="Thursday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Friday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="129.0" text="Friday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Saturday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="165.0" text="Saturday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Sunday" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="40.0" prefWidth="119.0" text="Sunday" textFill="WHITE">
                            <font>
                               <Font name="Microsoft YaHei Light" size="20.0" />
                            </font>
@@ -534,7 +534,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="131.0" layoutY="758.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableBottom" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="131.0">
+                  <HBox alignment="CENTER_LEFT" layoutX="132.0" layoutY="761.0" prefHeight="60.0" prefWidth="1177.0" styleClass="bossTableBottom" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="112.0">
                      <children>
                         <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="23:00" textFill="WHITE">
                            <font>
@@ -587,7 +587,7 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <JFXButton fx:id="appearBox" buttonType="RAISED" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #252530;" textFill="#252530" />
+                  <JFXButton fx:id="appearBox" buttonType="RAISED" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #252530;" text="Che" textFill="#252530" />
                </children>
             </AnchorPane>
          </content>

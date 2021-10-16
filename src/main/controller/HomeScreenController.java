@@ -38,6 +38,19 @@ public class HomeScreenController implements Initializable
         Desktop.getDesktop().browse(new URI("https://discord.gg/CKrpMAZY6y"));
     }
 
+    @FXML
+    private void FacebookLink(ActionEvent event) throws IOException, URISyntaxException
+    {
+        Desktop.getDesktop().browse(new URI("https://www.facebook.com/rextd46231812/"));
+    }
+
+    @FXML
+    private void InstagramLink(ActionEvent event) throws IOException, URISyntaxException
+    {
+        Desktop.getDesktop().browse(new URI("https://www.instagram.com/im.dannnn/"));
+    }
+
+
     public void appearTransition()
     {
         //time for transition to complete

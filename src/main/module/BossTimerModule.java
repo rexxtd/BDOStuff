@@ -175,8 +175,16 @@ public class BossTimerModule
                                 }
                                 else
                                 {
-                                    followTimeFixed = LocalTime.parse(timer[(i + 1) + 1]);
-                                    followTime = localTime.until(followTimeFixed, ChronoUnit.SECONDS);
+                                    if (day_column == 5)
+                                    {
+                                        followTimeFixed = LocalTime.parse(timer[0]);
+                                        followTime = 86400 - followTimeFixed.until(localTime, ChronoUnit.SECONDS);
+                                    }
+                                    else
+                                    {
+                                        followTimeFixed = LocalTime.parse(timer[(i + 1) + 1]);
+                                        followTime = localTime.until(followTimeFixed, ChronoUnit.SECONDS);
+                                    }
                                 }
                             }
 

@@ -54,12 +54,12 @@
                               <Font name="NSimSun" size="26.0" />
                            </font>
                         </Label>
-                        <Label contentDisplay="RIGHT" prefWidth="950.0" text="Want to have some fun? Let's begin and also " textFill="#dddddd">
+                        <Label contentDisplay="RIGHT" prefHeight="74.0" prefWidth="950.0" text="Want to have some fun? Let's begin and also " textFill="#dddddd">
                            <font>
                               <Font name="NSimSun" size="26.0" />
                            </font>
                            <VBox.margin>
-                              <Insets top="40.0" />
+                              <Insets top="30.0" />
                            </VBox.margin>
                            <graphic>
                               <ImageView fitHeight="86.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
@@ -71,8 +71,20 @@
                         </Label>
                      </children>
                   </VBox>
-                  <Hyperlink layoutX="813.0" layoutY="393.0" onAction="#DiscordLink" opacity="0.0" prefHeight="84.0" prefWidth="265.0" text="Hyperlink" />
-                  <Label layoutX="346.0" layoutY="592.0" text="Here are the shortcuts to :" textFill="#d3d3d3">
+                  <Hyperlink layoutX="819.0" layoutY="386.0" onAction="#DiscordLink" opacity="0.0" prefHeight="84.0" prefWidth="265.0" text="Hyperlink" />
+                  <Label contentDisplay="RIGHT" layoutX="401.0" layoutY="491.0" text="Also checkout my social media at:" textFill="#dddddd">
+                     <font>
+                        <Font name="NSimSun" size="26.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="102.0" fitWidth="293.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/icon/social.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label layoutX="346.0" layoutY="598.0" prefHeight="47.0" prefWidth="730.0" text="Here are the shortcuts to :" textFill="#d3d3d3">
                      <font>
                         <Font name="Lucida Bright Regular" size="25.0" />
                      </font>
@@ -87,7 +99,7 @@
                         <Insets top="30.0" />
                      </padding>
                   </Label>
-                  <HBox alignment="CENTER" layoutY="639.0" prefHeight="100.0" prefWidth="1421.0" spacing="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <HBox alignment="CENTER" layoutY="646.0" prefHeight="100.0" prefWidth="1421.0" spacing="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
                         <JFXButton onAction="#loadSimulator" prefHeight="60.0" prefWidth="337.0" styleClass="shortCuts" stylesheets="@../css/Style.css" text="Gear Enhancement" textFill="#cac0ff">
                            <font>
@@ -109,6 +121,8 @@
                         <Insets top="50.0" />
                      </padding>
                   </HBox>
+                  <Hyperlink layoutX="936.0" layoutY="511.0" onAction="#InstagramLink" prefHeight="70.0" prefWidth="71.0" />
+                  <Hyperlink layoutX="845.0" layoutY="508.0" onAction="#FacebookLink" prefHeight="71.0" prefWidth="72.0" />
                   <JFXButton fx:id="appearBox" buttonType="RAISED" layoutX="10.0" layoutY="8.0" prefHeight="850.0" prefWidth="1421.0" style="-fx-background-color: #252530;" textFill="#252530" />
                </children>
             </AnchorPane>
