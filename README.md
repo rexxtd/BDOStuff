@@ -2,7 +2,10 @@
 This application provides some important information about Black Desert, helps player to simulate some RNG stuff in the game so they can prepare themselves before the actual run.
 
 ## How to install
-> Coming soon
+1. Download BDOStuff.zip file from release.
+2. Extracted the zip file.
+3. Run BDOStuff.exe.
+4. Enjoy.
 
 ## Project Overview
 
