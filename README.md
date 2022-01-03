@@ -2,7 +2,7 @@
 This application provides some important information about Black Desert, helps player to simulate some RNG stuff in the game so they can prepare themselves before the actual run.
 
 ## How to install
-1. Download BDOStuff.zip file from release.
+1. Download BDOStuff.zip file from [Releases](https://github.com/rexxtd/BDOStuff/releases) or click here: https://github.com/rexxtd/BDOStuff/releases.
 2. Extract the zip file.
 3. Run BDOStuff.exe.
 4. Enjoy.
