@@ -3,7 +3,7 @@ This application provides some important information about Black Desert, helps p
 
 ## How to install
 1. Download BDOStuff.zip file from release.
-2. Extracted the zip file.
+2. Extract the zip file.
 3. Run BDOStuff.exe.
 4. Enjoy.
 
