@@ -18,7 +18,7 @@ I developed this application as a fun project, and to learn more about Java and 
 
 ### Built With
 - Java
-- XML
+- FXML
 - CSS
 - SQL
 
